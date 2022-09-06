@@ -1,0 +1,35 @@
+{/* <Typewriter
+            options={{
+              strings: ["Hello", "World"],
+              autoStart: true,
+              loop: true,
+            }}
+            // onInit={(typewriter) => {
+            //   typewriter
+            //     .typeString("GeeksForGeeks")
+            //     .pauseFor(1000)
+            //     .deleteAll()
+            //     .typeString("Welcomes You")
+            //     .deleteAll()
+            //     .start();
+            // }}
+          /> */}
+
+          <Box position='absolute' zIndex={10} left={4} bottom={4} w='fit-content' h='fit-content' p={2} m={2}
+            bgColor='whiteAlpha.300' rounded='xl'>
+            <Stack>
+              <SvgInstagram />
+              <SvgInstagram />
+              <SvgInstagram />
+            </Stack>
+          </Box>
+
+          <Sticky top={0} bottomBoundary={1200} onStateChange={()=> console.log("state changed")}>
+            <Box w='full' h='fit-content' p={2} m={2} bgColor='whiteAlpha.400' rounded='xl'>
+              <Stack direction='row' bgColor='blackAlpha.800' rounded='xl' p={2}>
+                <Heading>Projects</Heading>
+                <Heading>Resume</Heading>
+                <Heading>My Shelf</Heading>
+              </Stack>
+            </Box>
+          </Sticky>

@@ -1,0 +1,51 @@
+.bg-gradient-animate1 {
+  background: linear-gradient(
+    -45deg,
+    black,
+    rgb(30, 30, 30),
+    rgb(15, 15, 15),
+    black,
+    black,
+    rgb(35, 35, 35),
+    black
+  );
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  height: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-animate {
+  background: linear-gradient(
+    -10deg,
+    black,
+    rgb(0, 10, 0, 0.95),
+    rgb(0, 10, 0, 0.95),
+    black,
+    black
+  );
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
