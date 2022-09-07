@@ -28,14 +28,20 @@ const Contact = () => {
   });
 
   return (
-    <Stack direction='row' p={10} w='full'>
-      <Box>
+    <Stack
+      direction={["column", "column", "row"]}
+      py={10}
+      px={[2, 4, 10]}
+      w='full'>
+      <Box w='70%' p={5}>
         <Heading color='blue.600'>Contact Me</Heading>
-        <Text>I'm currently open to brainstrom on your project</Text>
+        <Text fontSize={[16, 18, 20]}>
+          I'm currently open to brainstrom on your project
+        </Text>
       </Box>
       <form style={{ width: "100%" }} onSubmit={formik.handleSubmit}>
         <Stack w='full' spacing={5}>
-          <Stack direction='row' spacing={10} w='80%'>
+          <Stack direction='row' spacing={10} w={["full", "full", "80%"]}>
             <Input
               variant='flushed'
               size='lg'
@@ -62,7 +68,7 @@ const Contact = () => {
           <Textarea
             rows={4}
             size='lg'
-            w='80%'
+            w={["full", "full", "80%"]}
             variant='flushed'
             resize='none'
             placeholder='Message'
@@ -72,7 +78,7 @@ const Contact = () => {
           <Button
             w='fit-content'
             bgColor='blue.600'
-            color='white'
+            color='black'
             px={5}
             rightIcon={<ArrowRightIcon width={20} />}
             type='submit'>

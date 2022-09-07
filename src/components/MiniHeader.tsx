@@ -1,13 +1,23 @@
-import { Box, Button, Heading, IconButton, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  IconButton,
+  Link,
+  Stack,
+} from "@chakra-ui/react";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import resume from "../../public/resume.pdf";
 
 const MiniHeader = ({
   header,
   headerOff,
+  scrollToProjects,
 }: {
   header: Boolean;
   headerOff: () => void;
+  scrollToProjects: () => void;
 }) => {
   return (
     <Box
@@ -22,24 +32,36 @@ const MiniHeader = ({
       <Stack direction='row' bgColor='blackAlpha.800' rounded='md' px={2}>
         {header ? (
           <>
-            <Button variant='ghost' p={0} color='gray'>
+            <Button
+              variant='link'
+              px={0}
+              py={2}
+              color='gray'
+              onClick={() => scrollToProjects()}>
               Projects
             </Button>
-            <Button variant='ghost' p={0} color='blue.700'>
+            <Button
+              variant='link'
+              as={Link}
+              href={resume}
+              px={0}
+              py={2}
+              color='blue.600'>
               Resume
             </Button>
-            <Button variant='ghost' p={0} color='blue.600'>
+            {/* <Button variant='link' px={0} py={2} color='blue.600'>
               My Shelf
-            </Button>
+            </Button> */}
           </>
         ) : (
           <IconButton
             size='xs'
-            aria-label=''
+            color='gray'
+            aria-label='mini-menu'
             variant='ghost'
             _hover={{ bgColor: "transparent" }}
             onClick={headerOff}>
-            <Bars3BottomLeftIcon width={30} color='green' stroke='green' />
+            <Bars3BottomLeftIcon width={30} stroke='gray' />
           </IconButton>
         )}
       </Stack>

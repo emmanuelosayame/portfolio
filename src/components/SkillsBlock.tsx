@@ -9,16 +9,16 @@ const SkillBlock = ({
   hoverBg,
 }: {
   text: string;
-  w: number;
-  p: string | number;
+  w: any;
+  p: string | number | any[];
   color: string;
   hoverBg: string;
 }) => {
   return (
     <GridItem>
       <Box bgColor='whiteAlpha.300' p={1} rounded='full'>
-        <Box w={w} p={p} bgColor='blackAlpha.700' m={1} rounded='full'>
-          <Text fontWeight={600} color={color}>
+        <Box w={w} p={p} bgColor='whiteAlpha.400' m={1} rounded='full'>
+          <Text fontWeight={600} fontSize={[13, 15, 18]} color={color}>
             {text}
           </Text>
         </Box>

@@ -4,7 +4,11 @@ import SkillBlock from "./SkillsBlock";
 
 const MyStack = () => {
   return (
-    <Flex p={8} w='80%'>
+    <Flex
+      px={[0, 2, 8]}
+      py={8}
+      w='80%'
+      flexDirection={["column", "column", "row"]}>
       <Box w='fit-content'>
         <Heading color='blue.600'>My Stack</Heading>
         <Text maxW={80}>
@@ -13,10 +17,13 @@ const MyStack = () => {
         </Text>
       </Box>
       <Grid
-        p={10}
-        w='70%'
+        // bgColor='red'
+        pt={10}
+        px={[2, 4, 10]}
+        w={["full", "full", "70%"]}
         gridTemplateColumns={[
-          "repeat(auto-fill,minmax(130px,1fr))",
+          "repeat(auto-fill,minmax(90px,1fr))",
+          "repeat(auto-fill,minmax(90px,1fr))",
           "repeat(auto-fit,minmax(120px,1fr))",
         ]}
         gridAutoRows='auto'
@@ -24,24 +31,24 @@ const MyStack = () => {
         columnGap={5}>
         <SkillBlock
           p={3}
-          w={180}
+          w={[90, 100, 180]}
           hoverBg='blue.600'
           text='Javascript'
-          color='yellow.400'
+          color='yellow.500'
         />
         <SkillBlock
           p={3}
-          w={150}
+          w={[100, 150]}
           hoverBg='blue.600'
           text='Typescript'
-          color='blue.600'
+          color='blue.500'
         />
         <SkillBlock
           p={5}
-          w={120}
+          w={[100, 120]}
           hoverBg='blue.600'
           text='NodeJs'
-          color='teal.300'
+          color='green.300'
         />
         <SkillBlock
           p={4}
@@ -51,15 +58,15 @@ const MyStack = () => {
           color='skyblue'
         />
         <SkillBlock
-          p={8}
+          p={7}
           w={100}
           hoverBg='blue.600'
           text='NextJs'
-          color='white'
+          color='black'
         />
         <SkillBlock
-          p={5}
-          w={80}
+          p={4}
+          w={90}
           hoverBg='blue.600'
           text='Firebase'
           color='orange.500'
@@ -72,18 +79,18 @@ const MyStack = () => {
           color='red.600'
         />
         <SkillBlock
-          p={10}
-          w={180}
+          p={[5, 10]}
+          w={[100, 120, 180]}
           hoverBg='blue.600'
           text='GraphQL'
           color='crimson'
         />
         <SkillBlock
-          p={5}
-          w={120}
+          p={4}
+          w={[100, 120]}
           hoverBg='blue.600'
           text='MongoDB'
-          color='green.400'
+          color='green.500'
         />
       </Grid>
     </Flex>

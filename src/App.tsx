@@ -27,18 +27,30 @@ import Footer from "./components/Footer";
 
 function App() {
   const headerNot = useRef(null);
+  const projectRef = useRef<any>(null);
 
   const [header, setHeader] = useState(true);
 
   const headerOff = () => {
     setHeader(true);
   };
+
+  const scrollToProjects = () => {
+    projectRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   // console.log(header);
 
   return (
     <Box h='100vh' w='full' bgColor='black'>
       <Box w='full' h='full' position='relative' maxW='1440px' mx='auto'>
-        <MiniHeader headerOff={headerOff} header={header} />
+        <MiniHeader
+          headerOff={headerOff}
+          header={header}
+          scrollToProjects={scrollToProjects}
+        />
         <Stack
           w='full'
           h='full'
@@ -48,17 +60,17 @@ function App() {
           position='relative'
           sx={{
             "&::-webkit-scrollbar": {
-              width: "10px",
+              width: "8px",
               backgroundColor: "transparent",
             },
             "&::-webkit-scrollbar-thumb": {
-              borderRadius: "10px",
+              borderRadius: "8px",
               backgroundColor: "gray",
             },
           }}>
-          <Flex p={200} w='full'>
+          <Flex py={[200]} px={[10, 30, 200]} w='full'>
             <Box
-              fontSize={40}
+              fontSize={[20, 30, 40]}
               // color='red'
               fontWeight={600}
               bgGradient='linear(to-r,gray,whiteAlpha.500,blue.200,blue.400,blue.600)'
@@ -74,7 +86,7 @@ function App() {
                 }}
               />
             </Box>
-            <CubeSvg fill='blue.500' boxSize='150' />
+            <CubeSvg fill='blue.500' boxSize={["100", "120", "150"]} />
           </Flex>
           <InView
             threshold={0.5}
@@ -97,7 +109,7 @@ function App() {
             h='30rem'
             p={10}
             backdropBlur='1.2px'>
-            <Box w='50%' textAlign='center' p={5}>
+            <Box w={["full", "full", "50%"]} textAlign='center' p={[2, 4, 5]}>
               <Heading size='xs' textAlign='start' color='white'>
                 Hi, <span style={{ color: "gray" }}>my name is</span>
               </Heading>
@@ -105,16 +117,16 @@ function App() {
                 {" "}
                 Emmanuel,
               </Heading>
-              <Text color='gray' fontSize='18'>
-                you are welcome to my portfolio and it is a pleasure to meet
-                you. I am a full stack + web3 developer based in Nigeria and I
-                enjoy solving problems because I am an ingenious individual.
-                Welcome to my small quarter of the net.
+              <Text color='gray' fontSize={["16", "17", "18"]}>
+                you are welcome to my small quarter of the net. It,s a pleasure
+                to meet you. I am a full stack + Iot developer based in Nigeria
+                and I enjoy creating digital products and experiences.
               </Text>
             </Box>
           </Stack>
           <AboutMe />
           <SkillsBlock />
+          <div ref={projectRef} />
           <Projects />
           <Contact />
           <Footer />
