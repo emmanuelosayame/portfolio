@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 import wagwan from "../../public/chatApp.png";
@@ -25,12 +25,22 @@ const Projects = () => {
           direction={["column", "column", "row"]}
           align='center'
           w='full'>
-          <Box w={["full", "full", "40%"]} filter='auto' blur='1px'>
+          <Box
+            w={["full", "full", "40%"]}
+            filter='auto'
+            blur='1px'
+            as={Link}
+            href='https://wagwanchat.vercel.app'>
             <Image src={wagwan} rounded='2xl' w={400} mb={2} />
             <Image src={wagwan2} rounded='2xl' w={400} h={350} />
           </Box>
           <Box w={["full", "full", "60%"]} h='fit-content' p={3}>
-            <Heading size='lg' my={5} color='white'>
+            <Heading
+              size='lg'
+              my={5}
+              color='white'
+              as={Link}
+              href='https://wagwanchat.vercel.app'>
               WagWan Chat App
             </Heading>
             <Text w={["full", "full", "70%"]} fontSize={[16, 18, 20]}>
@@ -51,12 +61,22 @@ const Projects = () => {
           direction={["column", "column", "row"]}
           align='center'
           w='full'>
-          <Box w={["full", "full", "40%"]} filter='auto' blur='1px'>
+          <Box
+            w={["full", "full", "40%"]}
+            filter='auto'
+            blur='1px'
+            as={Link}
+            href='https://themall-one.vercel.app'>
             <Image src={themall} rounded='2xl' w={400} mb={2} />
             <Image src={themall2} rounded='2xl' w={400} h={350} />
           </Box>
           <Box w={["full", "full", "60%"]} h='fit-content' p={3}>
-            <Heading size='lg' my={5} color='white'>
+            <Heading
+              size='lg'
+              my={5}
+              color='white'
+              as={Link}
+              href='https://themall-one.vercel.app'>
               A complete e-commerce platform
             </Heading>
             <Text w={["full", "full", "70%"]} fontSize={[16, 18, 20]}>

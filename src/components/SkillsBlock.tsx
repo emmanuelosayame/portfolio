@@ -16,9 +16,13 @@ const SkillBlock = ({
 }) => {
   return (
     <GridItem>
-      <Box bgColor='whiteAlpha.300' p={1} rounded='full'>
-        <Box w={w} p={p} bgColor='whiteAlpha.400' m={1} rounded='full'>
-          <Text fontWeight={600} fontSize={[13, 15, 18]} color={color}>
+      <Box bgColor='whiteAlpha.200' p={2} rounded='full'>
+        <Box w='auto' p={1} bgColor='black' rounded='lg'>
+          <Text
+            fontWeight={600}
+            textAlign='center'
+            fontSize={[13, 15, 18]}
+            color={color}>
             {text}
           </Text>
         </Box>

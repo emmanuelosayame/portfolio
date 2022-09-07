@@ -24,6 +24,7 @@ import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Links from "./components/Links";
 
 function App() {
   const headerNot = useRef(null);
@@ -51,6 +52,7 @@ function App() {
           header={header}
           scrollToProjects={scrollToProjects}
         />
+        <Links />
         <Stack
           w='full'
           h='full'

@@ -62,7 +62,7 @@ const MyStack = () => {
           w={100}
           hoverBg='blue.600'
           text='NextJs'
-          color='black'
+          color='whitesmoke'
         />
         <SkillBlock
           p={4}
