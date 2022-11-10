@@ -46,7 +46,7 @@ const Contact = () => {
             Contact Me
           </Heading>
           <Text fontSize={[16, 18, 20]}>
-            I'm currently open to brainstrom on your project
+            I'm currently open work and collaborations.
           </Text>
         </Box>
       </Box>
