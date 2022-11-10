@@ -32,65 +32,62 @@ function App() {
 
   const [header, setHeader] = useState(true);
 
-  const headerOff = () => {
-    setHeader(true);
-  };
-
   const scrollToProjects = () => {
     projectRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
-  // console.log(header);
 
   return (
     <>
       <Box w='full' h='full' maxW='1600px' mx='auto'>
         <MiniHeader
-          headerOff={headerOff}
+          headerOff={() => setHeader(true)}
           header={header}
           scrollToProjects={scrollToProjects}
         />
-
-        <Links />
 
         <Stack w='full' h='full' align='center'>
           <Box
             bgColor='whiteAlpha.400'
             backdropFilter='auto'
             backdropBlur='md'
-            my={[70]}
-            h='550px'
+            mt={[90]}
+            mb='50'
+            // mx='3'
+            h={["450px", "550px"]}
             w={["full", "full", "80%"]}
-            rounded='3xl'
+            rounded='30px'
             p='3'>
             <Stack
               // justify='center'
               position='relative'
               bgColor='white'
-              rounded='2xl'
+              boxShadow='sm'
+              rounded='3xl'
               h='full'
               p='4'
               mx='auto'>
               <Flex>
                 <Box
-                  fontSize={[20, 30, 40]}
-                  fontWeight={500}
-                  bgGradient='linear(to-r,gray,whiteAlpha.500,blue.200,blue.400,blue.600)'
+                  fontSize={[25, 30, 40]}
+                  fontWeight={600}
+                  bgGradient='linear(to-l,#b19cd9,#cea2fd)'
                   bgClip='text'>
                   <Typewriter
                     options={{
                       strings: [
-                        "Making the unimagineable possible",
-                        "Turning ideas into real life products",
+                        "Creating digital experiences...",
+                        "Converting ideas into real life products...",
+                        "Builing performant applications...",
                       ],
                       autoStart: true,
                       loop: true,
                     }}
                   />
                 </Box>
-                <CubeSvg fill='blue.500' boxSize={["100", "120", "150"]} />
+                {/* <CubeSvg fill='#b19cd9' boxSize={["100", "120", "150"]} /> */}
               </Flex>
 
               <Stack
@@ -111,20 +108,20 @@ function App() {
                 <Stack
                   w={["full", "full", "75%"]}
                   spacing='5'
-                  // textAlign='center'
+                  textAlign={["center", "center", "unset"]}
                   p={[2, 4, 5]}>
-                  <Heading size='lg' textAlign='start' color='gray'>
+                  <Heading size='lg' pl='5' textAlign='start' color='gray.500'>
                     Hi, there "
                   </Heading>
-                  <Flex>
-                    <Heading mr='2' color='wheat'>
+                  <Flex align='center'>
+                    <Heading mx='2' color='#cea2fd'>
                       I'm
                     </Heading>
-                    <Heading size='3xl' my={3} color='blue.300'>
+                    <Heading size='3xl' my={3} color='#b19cd9'>
                       Emmanuel,
                     </Heading>
                   </Flex>
-                  <Text color='gray' fontSize={["16", "17", "22"]}>
+                  <Text color='gray' px='2' fontSize={["18", "18", "22"]}>
                     you're welcome to my small quarter of the net. It,s a
                     pleasure to meet you.
                     <br /> I'm a front-end developer based in Nigeria and I
@@ -134,6 +131,13 @@ function App() {
               </Stack>
             </Stack>
           </Box>
+          <InView
+            threshold={0.5}
+            ref={headerNot}
+            onChange={(inView) => {
+              setHeader(inView);
+            }}
+          />
           {/* aboutme */}
           <AboutMe />
           {/* my stack */}
@@ -143,13 +147,6 @@ function App() {
           <Contact />
           <Footer />
         </Stack>
-        <InView
-          threshold={0.5}
-          ref={headerNot}
-          onChange={(inView) => {
-            setHeader(inView);
-          }}
-        />
       </Box>
     </>
   );

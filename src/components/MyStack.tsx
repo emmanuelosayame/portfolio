@@ -7,7 +7,7 @@ const MyStack = () => {
     <Flex
       px={[0, 2, 8]}
       py={40}
-      w='80%'
+      w={"80%"}
       flexDirection={["column", "column", "row"]}>
       <Box p='2.5' bgColor='whiteAlpha.300' rounded='3xl'>
         <Stack
@@ -16,13 +16,18 @@ const MyStack = () => {
           bgColor='white'
           rounded='2xl'
           p='3'
-          h='full'>
-          <Heading color='blue.600' size='lg'>
+          h='full'
+          boxShadow='sm'>
+          <Heading
+            bgGradient='linear(to-l,#b19cd9,#cea2fd)'
+            bgClip='text'
+            size='lg'
+            textAlign='center'>
             My Stack
           </Heading>
           <Text maxW={80}>
-            A few of the technologies and frameworks I work with. These are
-            tools I'm familiar with.
+            A few of the technologies and softwares I work with. These are tools
+            I'm familiar with.
           </Text>
         </Stack>
       </Box>
@@ -39,69 +44,16 @@ const MyStack = () => {
         gridAutoRows='auto'
         rowGap={5}
         columnGap={5}>
-        <SkillBlock
-          p={3}
-          w={[90, 100, 180]}
-          hoverBg='blue.600'
-          text='Javascript'
-          color='yellow.500'
-        />
-        <SkillBlock
-          p={3}
-          w={[100, 150]}
-          hoverBg='blue.600'
-          text='Typescript'
-          color='blue.500'
-        />
-        <SkillBlock
-          p={5}
-          w={[100, 120]}
-          hoverBg='blue.600'
-          text='NodeJs'
-          color='green.300'
-        />
-        <SkillBlock
-          p={4}
-          w={90}
-          hoverBg='blue.600'
-          text='React'
-          color='skyblue'
-        />
-        <SkillBlock
-          p={7}
-          w={100}
-          hoverBg='blue.600'
-          text='NextJs'
-          color='black'
-        />
-        <SkillBlock
-          p={4}
-          w={90}
-          hoverBg='blue.600'
-          text='Firebase'
-          color='orange.300'
-        />
-        <SkillBlock
-          p={3}
-          w={90}
-          hoverBg='blue.600'
-          text='Express'
-          color='red.600'
-        />
-        <SkillBlock
-          p={[5, 10]}
-          w={[100, 120, 180]}
-          hoverBg='blue.600'
-          text='GraphQL'
-          color='crimson'
-        />
-        <SkillBlock
-          p={4}
-          w={[100, 120]}
-          hoverBg='blue.600'
-          text='MongoDB'
-          color='green.300'
-        />
+        <SkillBlock hoverBg='blue.600' text='Javascript' color='yellow.400' />
+        <SkillBlock hoverBg='blue.600' text='Typescript' color='blue.500' />
+        <SkillBlock hoverBg='blue.600' text='NodeJs' color='green.300' />
+        <SkillBlock hoverBg='blue.600' text='React' color='skyblue' />
+        <SkillBlock hoverBg='blue.600' text='NextJs' color='black' />
+        <SkillBlock hoverBg='blue.600' text='Redux Tk' color='purple' />
+        <SkillBlock hoverBg='blue.600' text='Firebase' color='orange.300' />
+        <SkillBlock hoverBg='blue.600' text='Express' color='red.600' />
+        <SkillBlock hoverBg='blue.600' text='GraphQL' color='crimson' />
+        <SkillBlock hoverBg='blue.600' text='MongoDB' color='green.200' />
       </Grid>
     </Flex>
   );

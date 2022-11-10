@@ -1,6 +1,6 @@
 import { Box, Link, Stack } from "@chakra-ui/react";
 import React from "react";
-import { GithubSvg, InstagramSvg, LinkedInSvg, SvgInstagram } from "../Svgs";
+import { GithubSvg, WhatsappSvg, LinkedInSvg, SvgInstagram } from "../Svgs";
 
 const Links = () => {
   return (
@@ -16,7 +16,7 @@ const Links = () => {
       backdropFilter='auto'
       backdropBlur='lg'
       rounded='2xl'>
-      <Box bgColor='white' rounded='xl' px='1' py='2'>
+      <Box bgColor='white' rounded='xl' px='1' py='2' boxShadow='md'>
         <Stack>
           <Link href='https://github.com/biglevvi'>
             <GithubSvg />
@@ -24,8 +24,8 @@ const Links = () => {
           <Link href='https://www.linkedin.com/in/emmanuel-osayame-384702227'>
             <LinkedInSvg />
           </Link>
-          <Link href='https://instagram.com/biglevvi'>
-            <InstagramSvg />
+          <Link href='http://wa.me/07067266258'>
+            <WhatsappSvg />
           </Link>
         </Stack>
       </Box>
