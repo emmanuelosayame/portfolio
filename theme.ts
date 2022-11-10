@@ -21,7 +21,7 @@ const theme = extendTheme({
       defaultProps: {
         size: "sm", // default is md
         variant: "solid", // default is solid
-        fontSize: "15px",
+        fontSize: "17px",
         rounded: "md",
         // colorScheme: 'green', // default is gray
       },
@@ -73,9 +73,11 @@ const theme = extendTheme({
       body: {
         "fontSize": "20px",
         "color": "gray",
-        "bgGradient": "linear(to-r,red.200,blue.200,gray.300)",
+        // "bgGradient": "linear(to-r,#E55D87,blue.200,#5FC3E4)",
+        "bgGradient": "linear(to-r,#D3CCE3,#E9E4F0)",
+        // "bgGradient": "linear(to-r,#F2994A,#F2C94C)",
         "&::-webkit-scrollbar": {
-          width: "8px",
+          width: "4px",
           backgroundColor: "transparent",
         },
         "&::-webkit-scrollbar-thumb": {
@@ -84,7 +86,7 @@ const theme = extendTheme({
         },
         "&::-webkit-scrollbar-track": {
           borderRadius: "8px",
-          backgroundColor: "lightblue",
+          backgroundColor: "transparent",
         },
       },
     },
