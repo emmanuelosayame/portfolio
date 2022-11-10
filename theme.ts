@@ -6,11 +6,15 @@ const config = {
 };
 
 const theme = extendTheme({
+  fonts: {
+    heading: `'Space Grotesk', sans-serif`,
+    body: `'Space Grotesk', sans-serif`,
+  },
   config,
   components: {
     Text: {
       baseStyle: {
-        fontSize: "17px",
+        fontSize: "19px",
       },
     },
     Button: {
@@ -67,9 +71,21 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        fontSize: "20px",
-        color: "gray",
-        // borderRadius:10
+        "fontSize": "20px",
+        "color": "gray",
+        "bgGradient": "linear(to-r,red.200,blue.200,gray.300)",
+        "&::-webkit-scrollbar": {
+          width: "8px",
+          backgroundColor: "transparent",
+        },
+        "&::-webkit-scrollbar-thumb": {
+          borderRadius: "8px",
+          backgroundColor: "gray",
+        },
+        "&::-webkit-scrollbar-track": {
+          borderRadius: "8px",
+          backgroundColor: "lightblue",
+        },
       },
     },
   },

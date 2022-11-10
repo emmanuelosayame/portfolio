@@ -1,34 +1,43 @@
-import { Box, Heading, Image, Link, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Heading,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 
-import wagwan from "../../public/chatApp.png";
-import wagwan2 from "../../public/chatApp2.png";
-import themall from "../../public/themall.png";
-import themall2 from "../../public/themall2.png";
+import wagwan from "../assets/chatApp.png";
+import wagwan2 from "../assets/chatApp2.png";
+import themall from "../assets/themall.png";
+import themall2 from "../assets/themall2.png";
 
 const Projects = () => {
   return (
-    <Stack py={10} px={[2, 4, 10]}>
+    // <Box
+    //   bgColor='whiteAlpha.400'
+    //   backdropFilter='auto'
+    //   backdropBlur='md'
+    //   rounded='3xl'
+    //   p='2.5'>
+    <Stack py={5} px={[2, 4, 10]} bgColor='white' rounded='3xl'>
       <Heading
-        p={4}
+        // p={4}
         bgGradient='linear(to-l,gray,blue.600)'
         bgClip='text'
-        size='md'
+        size='lg'
+        textAlign='center'
         color='blue.600'>
         Some of the things I've built
       </Heading>
       <Stack spacing={5}>
-        <Stack
-          bgColor='whiteAlpha.300'
-          p={3}
-          rounded='xl'
-          direction={["column", "column", "row"]}
-          align='center'
-          w='full'>
+        <Stack direction={["column", "column", "row"]} align='center' w='full'>
           <Box
             w={["full", "full", "40%"]}
             filter='auto'
-            blur='1px'
+            blur='1.5px'
             as={Link}
             href='https://wagwanchat.vercel.app'>
             <Image src={wagwan} rounded='2xl' w={400} mb={2} />
@@ -53,7 +62,7 @@ const Projects = () => {
             </Text>
           </Box>
         </Stack>
-
+        <Divider />
         <Stack
           bgColor='whiteAlpha.300'
           p={3}
@@ -82,14 +91,16 @@ const Projects = () => {
             <Text w={["full", "full", "70%"]} fontSize={[16, 18, 20]}>
               A uniquely built web platform, featuring 3 applications, the
               customers' appication, the sellers' application and the admin'
-              application. Although it's still a work in progress but ny goal is
+              application. Although it's still a work in progress but my goal is
               to create accessible services to customers and have a platform
-              built just to handle the processes even at a large scale.
+              built just to handle the e-commerce processes even at a large
+              scale.
             </Text>
           </Box>
         </Stack>
       </Stack>
     </Stack>
+    // </Box>
   );
 };
 

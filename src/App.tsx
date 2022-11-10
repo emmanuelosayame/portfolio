@@ -45,96 +45,113 @@ function App() {
   // console.log(header);
 
   return (
-    <Box h='100vh' w='full' bgColor='black'>
-      <Box w='full' h='full' position='relative' maxW='1440px' mx='auto'>
+    <>
+      <Box w='full' h='full' maxW='1600px' mx='auto'>
         <MiniHeader
           headerOff={headerOff}
           header={header}
           scrollToProjects={scrollToProjects}
         />
+
         <Links />
-        <Stack
-          w='full'
-          h='full'
-          align='center'
-          bgColor='black'
-          overflowY='auto'
-          position='relative'
-          sx={{
-            "&::-webkit-scrollbar": {
-              width: "8px",
-              backgroundColor: "transparent",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              borderRadius: "8px",
-              backgroundColor: "gray",
-            },
-          }}>
-          <Flex py={[200]} px={[10, 30, 200]} w='full'>
-            <Box
-              fontSize={[20, 30, 40]}
-              // color='red'
-              fontWeight={600}
-              bgGradient='linear(to-r,gray,whiteAlpha.500,blue.200,blue.400,blue.600)'
-              bgClip='text'>
-              <Typewriter
-                options={{
-                  strings: [
-                    "Making the unimagineable possible",
-                    "Turning ideas into real life products",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </Box>
-            <CubeSvg fill='blue.500' boxSize={["100", "120", "150"]} />
-          </Flex>
-          <InView
-            threshold={0.5}
-            ref={headerNot}
-            onChange={(inView) => {
-              setHeader(inView);
-            }}
-          />
-          <Stack
-            top={20}
-            justify='end'
-            align='center'
-            rounded='xl'
-            position='absolute'
-            bgColor='whiteAlpha.50'
-            border='2px solid rgba(80,80,80,0.4)'
-            borderColor='blue.800'
+
+        <Stack w='full' h='full' align='center'>
+          <Box
+            bgColor='whiteAlpha.400'
             backdropFilter='auto'
-            w={["full", "80%"]}
-            h='30rem'
-            p={10}
-            backdropBlur='1.2px'>
-            <Box w={["full", "full", "50%"]} textAlign='center' p={[2, 4, 5]}>
-              <Heading size='xs' textAlign='start' color='white'>
-                Hi, <span style={{ color: "gray" }}>my name is</span>
-              </Heading>
-              <Heading size='xl' my={3} color='blue.600'>
-                {" "}
-                Emmanuel,
-              </Heading>
-              <Text color='gray' fontSize={["16", "17", "18"]}>
-                you are welcome to my small quarter of the net. It,s a pleasure
-                to meet you. I am a full stack + Iot developer based in Nigeria
-                and I enjoy creating digital products and experiences.
-              </Text>
-            </Box>
-          </Stack>
+            backdropBlur='md'
+            my={[70]}
+            h='550px'
+            w={["full", "full", "80%"]}
+            rounded='3xl'
+            p='3'>
+            <Stack
+              // justify='center'
+              position='relative'
+              bgColor='white'
+              rounded='2xl'
+              h='full'
+              p='4'
+              mx='auto'>
+              <Flex>
+                <Box
+                  fontSize={[20, 30, 40]}
+                  fontWeight={500}
+                  bgGradient='linear(to-r,gray,whiteAlpha.500,blue.200,blue.400,blue.600)'
+                  bgClip='text'>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Making the unimagineable possible",
+                        "Turning ideas into real life products",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </Box>
+                <CubeSvg fill='blue.500' boxSize={["100", "120", "150"]} />
+              </Flex>
+
+              <Stack
+                position='absolute'
+                top={0}
+                // w={["full", "80%"]}
+                bottom='0'
+                right='0'
+                left='0'
+                mx='auto'
+                justify='center'
+                align='end'
+                rounded='2xl'
+                bgColor='whiteAlpha.500'
+                backdropFilter='auto'
+                // h='30rem'
+                backdropBlur='2px'>
+                <Stack
+                  w={["full", "full", "75%"]}
+                  spacing='5'
+                  // textAlign='center'
+                  p={[2, 4, 5]}>
+                  <Heading size='lg' textAlign='start' color='gray'>
+                    Hi, there "
+                  </Heading>
+                  <Flex>
+                    <Heading mr='2' color='wheat'>
+                      I'm
+                    </Heading>
+                    <Heading size='3xl' my={3} color='blue.300'>
+                      Emmanuel,
+                    </Heading>
+                  </Flex>
+                  <Text color='gray' fontSize={["16", "17", "22"]}>
+                    you're welcome to my small quarter of the net. It,s a
+                    pleasure to meet you.
+                    <br /> I'm a front-end developer based in Nigeria and I
+                    enjoy creating digital products and experiences.
+                  </Text>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Box>
+          {/* aboutme */}
           <AboutMe />
+          {/* my stack */}
           <SkillsBlock />
           <div ref={projectRef} />
           <Projects />
           <Contact />
           <Footer />
         </Stack>
+        <InView
+          threshold={0.5}
+          ref={headerNot}
+          onChange={(inView) => {
+            setHeader(inView);
+          }}
+        />
       </Box>
-    </Box>
+    </>
   );
 }
 

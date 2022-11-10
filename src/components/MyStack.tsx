@@ -6,15 +6,25 @@ const MyStack = () => {
   return (
     <Flex
       px={[0, 2, 8]}
-      py={8}
+      py={40}
       w='80%'
       flexDirection={["column", "column", "row"]}>
-      <Box w='fit-content'>
-        <Heading color='blue.600'>My Stack</Heading>
-        <Text maxW={80}>
-          A few of the technologies and frameworks I work with. These are tools
-          I'm familiar with.
-        </Text>
+      <Box p='2.5' bgColor='whiteAlpha.300' rounded='3xl'>
+        <Stack
+          justify='center'
+          w='fit-content'
+          bgColor='white'
+          rounded='2xl'
+          p='3'
+          h='full'>
+          <Heading color='blue.600' size='lg'>
+            My Stack
+          </Heading>
+          <Text maxW={80}>
+            A few of the technologies and frameworks I work with. These are
+            tools I'm familiar with.
+          </Text>
+        </Stack>
       </Box>
       <Grid
         // bgColor='red'
@@ -62,14 +72,14 @@ const MyStack = () => {
           w={100}
           hoverBg='blue.600'
           text='NextJs'
-          color='whitesmoke'
+          color='black'
         />
         <SkillBlock
           p={4}
           w={90}
           hoverBg='blue.600'
           text='Firebase'
-          color='orange.500'
+          color='orange.300'
         />
         <SkillBlock
           p={3}
@@ -90,7 +100,7 @@ const MyStack = () => {
           w={[100, 120]}
           hoverBg='blue.600'
           text='MongoDB'
-          color='green.500'
+          color='green.300'
         />
       </Grid>
     </Flex>

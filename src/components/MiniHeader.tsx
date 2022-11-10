@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import resume from "../../public/resume.pdf";
+import resume from "../assets/resume.pdf";
 
 const MiniHeader = ({
   header,
@@ -23,15 +23,15 @@ const MiniHeader = ({
     <Box
       p={2}
       m={2}
-      bgColor='whiteAlpha.400'
+      bgColor='whiteAlpha.500'
       backdropFilter='auto'
-      backdropBlur='sm'
-      rounded='md'
-      position='absolute'
+      backdropBlur='lg'
+      rounded='2xl'
+      position='fixed'
       top={0}
       right={10}
       zIndex={20}>
-      <Stack direction='row' bgColor='blackAlpha.800' rounded='md' px={2}>
+      <Stack direction='row' bgColor='white' rounded='xl' px={2}>
         {header ? (
           <>
             <Button
@@ -63,7 +63,7 @@ const MiniHeader = ({
             variant='ghost'
             _hover={{ bgColor: "transparent" }}
             onClick={headerOff}>
-            <Bars3BottomLeftIcon width={30} stroke='gray' />
+            <Bars3BottomLeftIcon width={25} stroke='gray' />
           </IconButton>
         )}
       </Stack>
