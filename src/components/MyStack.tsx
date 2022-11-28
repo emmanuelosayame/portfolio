@@ -1,61 +1,32 @@
-import { Box, Flex, Grid, Heading, Stack, Text } from "@chakra-ui/react";
-import React from "react";
 import SkillBlock from "./SkillsBlock";
 
 const MyStack = () => {
   return (
-    <Flex
-      px={[0, 2, 8]}
-      py={40}
-      w={"80%"}
-      flexDirection={["column", "column", "row"]}>
-      <Box p='2.5' bgColor='whiteAlpha.300' rounded='3xl'>
-        <Stack
-          justify='center'
-          w='fit-content'
-          bgColor='white'
-          rounded='2xl'
-          p='3'
-          h='full'
-          boxShadow='sm'>
-          <Heading
-            bgGradient='linear(to-l,#b19cd9,#cea2fd)'
-            bgClip='text'
-            size='lg'
-            textAlign='center'>
+    <div className='md:px-8 py-5 w-5/8 flex justify-center flex-col md:flex-row'>
+      <div className='p-3 bg-white bg-opacity-40 rounded-[30px]'>
+        <div className='rounded-3xl w-80 bg-white p-3 h-full flex flex-col justify-center drop-shadow-sm'>
+          <h2 className='text-orange-300 text-3xl font-semibold text-center m-2'>
             My Stack
-          </Heading>
-          <Text maxW={80}>
+          </h2>
+          <p className=''>
             A few of the technologies and softwares I work with. These are tools
             I'm familiar with.
-          </Text>
-        </Stack>
-      </Box>
-      <Grid
-        // bgColor='red'
-        pt={10}
-        px={[2, 4, 10]}
-        w={["full", "full", "70%"]}
-        gridTemplateColumns={[
-          "repeat(auto-fill,minmax(90px,1fr))",
-          "repeat(auto-fill,minmax(90px,1fr))",
-          "repeat(auto-fit,minmax(120px,1fr))",
-        ]}
-        gridAutoRows='auto'
-        rowGap={5}
-        columnGap={5}>
-        <SkillBlock hoverBg='blue.600' text='Javascript' color='yellow.400' />
-        <SkillBlock hoverBg='blue.600' text='Typescript' color='blue.500' />
-        <SkillBlock hoverBg='blue.600' text='NodeJs' color='green.300' />
+          </p>
+        </div>
+      </div>
+      <div className='grid grid-cols-5 px-2 md:px-10 pt-10 md:pt-0 gap-5'>
+        <SkillBlock hoverBg='blue.600' text='Javascript' color='yellow' />
+        <SkillBlock hoverBg='blue.600' text='Typescript' color='blue' />
+        <SkillBlock hoverBg='blue.600' text='NodeJs' color='green' />
         <SkillBlock hoverBg='blue.600' text='React' color='skyblue' />
         <SkillBlock hoverBg='blue.600' text='NextJs' color='black' />
         <SkillBlock hoverBg='blue.600' text='Redux Tk' color='purple' />
-        <SkillBlock hoverBg='blue.600' text='Firebase' color='orange.300' />
-        <SkillBlock hoverBg='blue.600' text='Express' color='red.600' />
+        <SkillBlock hoverBg='blue.600' text='Firebase' color='orange' />
+        <SkillBlock hoverBg='blue.600' text='Express' color='red' />
         <SkillBlock hoverBg='blue.600' text='GraphQL' color='crimson' />
-        <SkillBlock hoverBg='blue.600' text='MongoDB' color='green.200' />
-      </Grid>
-    </Flex>
+        <SkillBlock hoverBg='blue.600' text='MongoDB' color='lightgreen' />
+      </div>
+    </div>
   );
 };
 

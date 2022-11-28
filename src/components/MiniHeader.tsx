@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Heading,
-  IconButton,
-  Link,
-  Stack,
-} from "@chakra-ui/react";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
-import React from "react";
 import resume from "../assets/emmanuelosayame_resume.pdf";
 
 const MiniHeader = ({
@@ -20,64 +11,32 @@ const MiniHeader = ({
   scrollToProjects: () => void;
 }) => {
   return (
-    <Box
-      p={2.5}
-      m={2}
-      bgColor='whiteAlpha.500'
-      backdropFilter='auto'
-      backdropBlur='lg'
-      rounded='3xl'
-      position='fixed'
-      top={0}
-      right={[2, 2, 7]}
-      zIndex={20}>
-      <Stack
-        direction='row'
-        bgColor='white'
-        rounded='2xl'
-        px={4}
-        py='1'
-        boxShadow='md'>
+    <div className='p-2.5 m-2 backdrop-blur-lg bg-white bg-opacity-50 rounded-3xl fixed z-20 top-0 right-2 md:right-7'>
+      <div className='flex flex-row bg-white rounded-2xl space-x-2 px-4 py-1 drop-shadow-md'>
         {header ? (
           <>
-            <Button
-              variant='link'
-              px={0}
-              py={2}
-              // fontWeight={500}
-              fontSize='17'
-              color='gray'
+            <button
+              className='py-2 text-gray-700'
               onClick={() => scrollToProjects()}>
               Projects
-            </Button>
-            <Button
-              variant='link'
-              // fontWeight={500}
-              fontSize='17'
-              as={Link}
-              href={resume}
-              px={0}
-              py={2}
-              color='#b19cd9'>
+            </button>
+            <a className='py-2 text-[#b19cd9]' href={resume}>
               Resume
-            </Button>
+            </a>
             {/* <Button variant='link' px={0} py={2} color='blue.600'>
               My Shelf
             </Button> */}
           </>
         ) : (
-          <IconButton
-            size='xs'
-            color='gray'
+          <button
+            className='text-gray-500 hover:bg-opacity-60'
             aria-label='mini-menu'
-            variant='ghost'
-            _hover={{ bgColor: "transparent" }}
             onClick={headerOff}>
             <Bars3BottomLeftIcon width={25} stroke='gray' />
-          </IconButton>
+          </button>
         )}
-      </Stack>
-    </Box>
+      </div>
+    </div>
   );
 };
 
