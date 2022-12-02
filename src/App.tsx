@@ -1,8 +1,8 @@
+// import "./index.css";
 import { useRef, useState } from "react";
 import Typewriter from "typewriter-effect";
-import { InView, useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import MiniHeader from "./components/MiniHeader";
-import "./index.css";
 import SkillsBlock from "./components/MyStack";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
@@ -23,8 +23,8 @@ function App() {
   };
 
   return (
-    <>
-      <div className='w-full h-full text-gray-500'>
+    <div className=''>
+      <div className='w-full text-gray-500  h-full bg-gradient-to-r from-[#FFD8CB] to-[#F9D29D] flex'>
         <MiniHeader
           headerOff={() => setHeader(true)}
           header={header}
@@ -88,7 +88,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

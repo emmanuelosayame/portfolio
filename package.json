@@ -9,11 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.6",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@fontsource/space-grotesk": "^4.5.10",
     "@heroicons/react": "^2.0.10",
+    "@radix-ui/react-tabs": "^1.0.1",
     "formik": "^2.2.9",
     "framer-motion": "^6",
     "react": "^18.2.0",
