@@ -1,13 +1,3 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Input,
-  Stack,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
@@ -28,82 +18,55 @@ const Contact = () => {
   });
 
   return (
-    <Stack
-      direction={["column", "column", "row"]}
-      py={10}
-      px={[2, 4, 10]}
-      w='full'>
-      <Box
-        bgColor='whiteAlpha.400'
-        backdropFilter='auto'
-        backdropBlur='md'
-        rounded='3xl'
-        p='2'
-        h='fit-content'
-        w={["full", "full", "70%"]}>
-        <Box p={5} bgColor='white' boxShadow='md' rounded='3xl'>
-          <Heading bgGradient='linear(to-l,#b19cd9,#cea2fd)' bgClip='text'>
-            Contact Me
-          </Heading>
-          <Text fontSize={[16, 18, 20]}>
-            I'm currently open work and collaborations.
-          </Text>
-        </Box>
-      </Box>
+    <div className='md:flex py-10 px-2 md:px-10 w-full'>
+      <div className='bg-white bg-opacity-40 backdrop-blur-md rounded-3xl p-2 h-fit w-full md:w-10/12'>
+        <div className='p-5 bg-white drop-shadow-md rounded-3xl'>
+          <h2 className='text-[#b19cd9] text-xl font-semibold'>Contact Me</h2>
+          <p className='text-base md:text-lg'>
+            I'm currently open for work and collaborations.
+          </p>
+        </div>
+      </div>
       <form style={{ width: "100%" }} onSubmit={formik.handleSubmit}>
-        <Stack w='full' spacing={5} pb={["20", "20", "10"]} align='center'>
-          <Stack direction='row' spacing={10} w={["full", "full", "80%"]}>
-            <Input
-              variant='flushed'
-              size='lg'
+        <div className='w-full pb-20 md:pb-10 space-y-5 flex flex-col items-center'>
+          <div className='w-full md:w-11/12'>
+            <input
+              className='bg-transparent outline-none border-b text-white text-lg w-full my-3'
               placeholder='Name'
-              w='full'
               id='firstName'
               name='name'
               type='text'
-              color='white'
               onChange={formik.handleChange}
               value={formik.values.name}
             />
-            <Input
-              variant='flushed'
-              size='lg'
+            <input
+              className='bg-transparent outline-none border-b text-white text-lg w-full my-3'
               placeholder='Email'
-              w='full'
               id='firstName'
               name='email'
               type='email'
-              color='white'
               onChange={formik.handleChange}
               value={formik.values.email}
             />
-          </Stack>
-          <Textarea
+          </div>
+          <textarea
+            className='bg-transparent outline-none border-b text-white text-lg w-full my-3 resize-none'
             rows={4}
-            size='lg'
-            w={["full", "full", "80%"]}
-            variant='flushed'
-            resize='none'
             placeholder='Message'
-            color='white'
             id='lastName'
             {...formik.getFieldProps("message")}
           />
-          <Button
-            w='fit-content'
-            bgColor='white'
-            color='#b19cd9'
-            fontSize='18px'
-            rounded='2xl'
-            p={5}
-            rightIcon={<ArrowRightIcon width={20} />}
+          <button
+            className='inline-flex items-center space-x-2 disabled:opacity-50 cursor-pointer disabled:cursor-auto
+             bg-white px-5 py-1 text-[#b19cd9] text-lg rounded-2xl drop-shadow-sm'
             type='submit'
-            isDisabled={!formik.dirty}>
-            Shoot
-          </Button>
-        </Stack>
+            disabled={!formik.dirty}>
+            <span>Shoot</span>
+            <ArrowRightIcon width={20} />
+          </button>
+        </div>
       </form>
-    </Stack>
+    </div>
   );
 };
 

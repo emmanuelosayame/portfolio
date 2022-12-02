@@ -1,6 +1,3 @@
-import { Box, GridItem, Text } from "@chakra-ui/react";
-import React from "react";
-
 const SkillBlock = ({
   text,
   color,
@@ -11,25 +8,17 @@ const SkillBlock = ({
   hoverBg: string;
 }) => {
   return (
-    <GridItem>
-      <Box bgColor='whiteAlpha.400' p={2} rounded={["3xl", "30px"]}>
-        <Box
-          w='auto'
-          p={3}
-          bgColor='white'
-          rounded={["2xl", "3xl"]}
-          boxShadow='sm'>
-          <Text
-            fontWeight={600}
-            textAlign='center'
-            fontSize={[16, 18, 20]}
-            whiteSpace='nowrap'
-            color={color}>
+    <div>
+      <div className='bg-white bg-opacity-40 p-2 rounded-3xl md:rounded-[30px]'>
+        <div className='py-4 md:p-3 bg-white rounded-2xl md:rounded-3xl drop-shadow-sm'>
+          <p
+            className={`text-center whitespace-nowrap text-base md:text-xl`}
+            style={{ color }}>
             {text}
-          </Text>
-        </Box>
-      </Box>
-    </GridItem>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
