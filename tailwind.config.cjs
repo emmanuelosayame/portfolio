@@ -10,6 +10,12 @@ module.exports = {
       fontFamily: {
         "space-gotesk": ["Space Grotesk"],
       },
+      data: {
+        checked: 'state~="checked"',
+        unchecked: 'state~="unchecked"',
+        active: 'state~="active"',
+        inactive: 'state~="inactive"',
+      },
     },
   },
   plugins: [],

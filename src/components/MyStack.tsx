@@ -5,7 +5,7 @@ const MyStack = () => {
     <div className='md:px-8 w-full py-5 md:w-5/8 flex justify-center flex-col md:flex-row'>
       <div className='p-2.5 w-full md:w-fit bg-white bg-opacity-40 rounded-[30px]'>
         <div className='rounded-3xl w-full md:w-80 bg-white p-3 h-full flex flex-col justify-center drop-shadow-sm'>
-          <h2 className='text-orange-300 text-3xl font-semibold text-center m-2'>
+          <h2 className='text-neutral-400 text-3xl font-semibold text-center m-2'>
             My Stack
           </h2>
           <p className=''>

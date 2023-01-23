@@ -21,7 +21,7 @@ const Contact = () => {
     <div className='md:flex py-10 px-2 md:px-10 w-full'>
       <div className='bg-white bg-opacity-40 backdrop-blur-md rounded-3xl p-2 h-fit w-full md:w-10/12'>
         <div className='p-5 bg-white drop-shadow-md rounded-3xl'>
-          <h2 className='text-[#b19cd9] text-xl font-semibold'>Contact Me</h2>
+          <h2 className='text-neutral-400 text-xl font-semibold'>Contact Me</h2>
           <p className='text-base md:text-lg'>
             I'm currently open for work and collaborations.
           </p>
@@ -31,7 +31,7 @@ const Contact = () => {
         <div className='w-full pb-20 md:pb-10 space-y-5 flex flex-col items-center'>
           <div className='w-full md:w-11/12'>
             <input
-              className='bg-transparent outline-none border-b text-white text-lg w-full my-3'
+              className='bg-transparent outline-none border-b border-b-white text-white text-lg w-full my-3'
               placeholder='Name'
               id='firstName'
               name='name'
@@ -40,7 +40,7 @@ const Contact = () => {
               value={formik.values.name}
             />
             <input
-              className='bg-transparent outline-none border-b text-white text-lg w-full my-3'
+              className='bg-transparent outline-none border-b border-b-white text-white text-lg w-full my-3'
               placeholder='Email'
               id='firstName'
               name='email'
@@ -50,7 +50,7 @@ const Contact = () => {
             />
           </div>
           <textarea
-            className='bg-transparent outline-none border-b text-white text-lg w-full my-3 resize-none'
+            className='bg-transparent outline-none border-b border-b-white text-white text-lg w-full my-3 resize-none'
             rows={4}
             placeholder='Message'
             id='lastName'

@@ -25,8 +25,8 @@ const images: Images = {
 const projects = [
   {
     id: "radicalx",
-    webLink: "https://radicalxdashboard.vercel.app",
-    githubLink: "https://github.com/TeamTechRadicals/Project1",
+    webLink: "https://internship-dashboard.vercel.app",
+    githubLink: "https://github.com/biglevvi/internship-dashboard",
     title: "Radical-X-dashboard",
     gist: "Companies working with RadicalX want to be able to provide 3-6 months paid apprenticeships to the top talent coming out of the RadicalX internship program. RadicalX apprenticeships enable companies to discover, build and manage a cloud team to work on specific projects on-demand. The idea is that companies will be able to build and onboard an apprenticeship team in days and it  will allow them pay-as-you-go flexibility. In order to do this,  companies need to create an apprenticeship on the RadicalX platform. This web app was designed to allow companies create apprenticeships on the platform.",
   },
@@ -49,7 +49,7 @@ const projects = [
 const Projects = () => {
   return (
     <div className='py-5 px-2 md:px-10 bg-white rounded-3xl'>
-      <h2 className='pb-4 bg-clip-text font-semibold text-center text-2xl text-[#b19cd9]'>
+      <h2 className='pb-4 bg-clip-text font-semibold text-center text-xl md:text-2xl text-neutral-400'>
         Some of the things I've built
       </h2>
       <div className='space-y-5'>

@@ -25,33 +25,33 @@ const tabs: Tab[] = [
 const AboutMe = () => {
   return (
     <div className='bg-white h-[700px] md:h-[600px] rounded-3xl w-full'>
-      <h2 className='w-full text-center p-4 bg-clip-text bg-gradient-to-r from-[#b19cd9] to-[#cea2fd]'>
+      <h2 className='w-full text-center p-4 text-neutral-400 font-semibold text-lg'>
         About Me
       </h2>
       <div className='flex flex-col md:flex-row py-10 px-2 md:px-10'>
         <div className='w-full flex flex-col justify-center items-center px-4'>
           <p className='w-fulltext-gray-500 text-base md:text-xl'>
-            My names are{" "}
-            <span className='text-[#D3CCE3]'>Emmanuel Osayame</span>. I enjoy
+            I'm <span className='text-neutral-400'>Emmanuel</span> and I enjoy
             creating digital contents. I focus on building accessible, inclusive
             products and{" "}
-            <span className='text-[#D3CCE3]'>I love What I do.</span>
+            <span className='text-neutral-400'>I love What I do.</span>
           </p>
 
           <Tabs.Root className='w-full h-full p-3' defaultValue='tab1'>
             <Tabs.List
-              className='flex w-full rounded-t-lg bg-white dark:bg-gray-800'
+              className='flex w-full rounded-t-3xl bg-white dark:bg-gray-800'
               aria-label=''>
               {tabs.map(({ title, value }) => (
                 <Tabs.Trigger
                   key={`tab-trigger-${value}`}
                   value={value}
                   className='group first:rounded-tl-lg last:rounded-tr-lg border-b first:border-r last:border-l
-                 border-gray-300 dark:border-gray-600 radix-state-active:border-b-gray-700 focus-visible:radix-state-active:border-b-transparent radix-state-inactive:bg-gray-50 dark:radix-state-active:border-b-gray-100 dark:radix-state-active:bg-gray-900 focus-visible:dark:radix-state-active:border-b-transparent dark:radix-state-inactive:bg-gray-800
-                  flex-1 px-3 py-2.5 focus:radix-state-active:border-b-red focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'>
+                 border-gray-300 dark:border-gray-600 data-active:border-b-gray-400 focus-visible:data-active:border-b-red-500 data-inactive:bg-gray-50
+                  dark:data-active:border-b-gray-100 dark:data-active:bg-gray-900 focus-visible:dark:data-active:border-b-transparent dark:data-inactive:bg-gray-800
+                  flex-1 px-3 py-2.5 focus:data-active:border-b-red focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'>
                   <span
                     className={
-                      "text-base font-medium text-gray-700 dark:text-gray-100"
+                      "text-base font-medium text-neutral-400 dark:text-gray-100"
                     }>
                     {title}
                   </span>
@@ -94,7 +94,7 @@ const AboutMe = () => {
           </Tabs.Root>
         </div>
         <div className='hidden justify-center items-center md:block w-full'>
-          <Cube2Svg fill='blue.600' boxSize={[80]} />
+          <Cube2Svg />
         </div>
       </div>
     </div>

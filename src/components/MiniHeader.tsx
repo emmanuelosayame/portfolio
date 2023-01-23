@@ -11,16 +11,16 @@ const MiniHeader = ({
   scrollToProjects: () => void;
 }) => {
   return (
-    <div className='p-2.5 m-2 backdrop-blur-lg bg-white bg-opacity-50 rounded-3xl fixed z-20 top-0 right-2 md:right-7'>
-      <div className='flex flex-row bg-white rounded-2xl space-x-2 px-4 py-1 drop-shadow-md'>
+    <div className='p-2 backdrop-blur-lg bg-white bg-opacity-40 rounded-[50px] fixed z-20 top-3 right-2 md:right-7'>
+      <div className='flex flex-row  bg-white rounded-xl space-x-2 px-4 py-1 drop-shadow-md'>
         {header ? (
           <>
             <button
-              className='py-2 text-gray-700'
+              className='py-2 text-gray-700 font-semibold'
               onClick={() => scrollToProjects()}>
               Projects
             </button>
-            <a className='py-2 text-[#b19cd9]' href={resume}>
+            <a className='py-2 text-red-500 font-semibold' href={resume}>
               Resume
             </a>
             {/* <Button variant='link' px={0} py={2} color='blue.600'>
