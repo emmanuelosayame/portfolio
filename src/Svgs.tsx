@@ -11,7 +11,7 @@ export const CodeSvg = (props: any) => (
   </svg>
 );
 export const Cube2Svg = (props: any) => (
-  <svg viewBox='0 0 512 512' {...props}>
+  <svg viewBox='0 0 550 550' {...props}>
     <path
       style={{
         fill: "white",

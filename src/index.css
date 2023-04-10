@@ -4,6 +4,27 @@
 
 * {
   font-family: "Space Grotesk", sans-serif;
+  color-scheme: light only;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light only;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light only;
+  }
+}
+
+:root {
+  color-scheme: light only;
+}
+
+.mainbg {
+  /* background: #c1c1c1; */
 }
 
 .bg-gradient-animate1 {
