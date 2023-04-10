@@ -74,11 +74,11 @@ const Projects = () => {
             <a className='w-full md:w-5/12 blur-[1px]' href={project.webLink}>
               <img
                 src={images[project.id][1] || ""}
-                className='rounded-2xl w-[400px] mb-2'
+                className='rounded-2xl w-fit md:w-[400px] h-fit mb-2'
               />
               <img
                 src={images[project.id][2]}
-                className='rounded-2xl w-[400px] h-fit'
+                className='rounded-2xl w-fit md:w-[400px] h-fit'
               />
             </a>
             <div className='w-full md:w-7/12 h-fit p-3'>
