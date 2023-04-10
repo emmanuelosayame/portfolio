@@ -8,7 +8,7 @@ const MyStack = () => {
           <h2 className='text-neutral-400 text-3xl font-semibold text-center m-2'>
             My Stack
           </h2>
-          <p className=''>
+          <p className='text-center'>
             A few of the technologies I work with. These are tools I'm familiar
             with.
           </p>
@@ -25,6 +25,8 @@ const MyStack = () => {
         <SkillBlock hoverBg='blue.600' text='Express' color='red' />
         <SkillBlock hoverBg='blue.600' text='GraphQL' color='crimson' />
         <SkillBlock hoverBg='blue.600' text='MongoDB' color='lightgreen' />
+        <SkillBlock hoverBg='blue.600' text='Zustand' color='purple' />
+        <SkillBlock hoverBg='blue.600' text='Trpc' color='skyblue' />
       </div>
     </div>
   );

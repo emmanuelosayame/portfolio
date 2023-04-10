@@ -2,10 +2,12 @@ const SkillBlock = ({
   text,
   color,
   hoverBg,
+  textColor,
 }: {
   text: string;
   color: string;
   hoverBg: string;
+  textColor?: string;
 }) => {
   return (
     <div>

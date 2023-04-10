@@ -42,7 +42,7 @@ const projects = [
     webLink: "https://www.delorand.com",
     githubLink: "private",
     title: "delorand",
-    gist: "An e-commerce platform, specialized in fashion and electronic components. Built in house with typical frontend technologies like Nextjs, mongodb, trpc..., the webapp boasts performance, good optimation,excellent design and over-all proper implementation of frontend technologies.",
+    gist: "An e-commerce platform, specialized in fashion and electronic components. Built in house with typical frontend technologies like Nextjs, mongodb, trpc..., the webapp boasts performance, good optimation, excellent design and over-all proper implementation of frontend technologies.",
   },
   {
     id: "radicalx",
@@ -63,7 +63,7 @@ const projects = [
 const Projects = () => {
   return (
     <div className='py-5 px-2 md:px-10 bg-white rounded-3xl'>
-      <h2 className='pb-4 bg-clip-text font-semibold text-center text-xl md:text-2xl text-blue-400'>
+      <h2 className='mb-10 bg-clip-text font-semibold text-center text-xl md:text-2xl text-blue-400'>
         Some of the things I've built
       </h2>
       <div className='space-y-5'>
@@ -71,14 +71,14 @@ const Projects = () => {
           <div
             key={project.id}
             className='flex flex-col md:flex-row items-center w-full'>
-            <a className='w-full md:w-5/12 blur-[1px]' href={project.webLink}>
+            <a className='w-full md:w-5/12' href={project.webLink}>
               <img
                 src={images[project.id][1] || ""}
-                className='rounded-2xl w-fit md:w-[400px] h-fit mb-2'
+                className='rounded-2xl w-full md:w-[400px] mb-2'
               />
               <img
                 src={images[project.id][2]}
-                className='rounded-2xl w-fit md:w-[400px] h-fit'
+                className='rounded-2xl w-full md:w-[400px]'
               />
             </a>
             <div className='w-full md:w-7/12 h-fit p-3'>
