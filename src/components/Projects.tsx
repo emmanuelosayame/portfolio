@@ -1,16 +1,18 @@
-import React from "react";
+"use client";
 
-import radicalxdashboard from "../assets/radicalxdashboard.png";
-import radicalxdashboard2 from "../assets/radicalxdashboard2.jpg";
-import deloranddesktop from "../assets/image_2023-04-10_180221216.webp";
-import delorandmobile from "../assets/delorandmobile.webp";
-import ewsdesktop from "../assets/image_2023-04-10_155919460.webp";
-import ewsmobile from "../assets/ewsmobile.webp";
-import { GithubSvg } from "../Svgs";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import React from "react";
+import radicalxdashboard from "public/radicalxdashboard.png";
+import radicalxdashboard2 from "public/radicalxdashboard2.jpg";
+import deloranddesktop from "public/image_2023-04-10_180221216.webp";
+import delorandmobile from "public/delorandmobile.webp";
+import ewsdesktop from "public/image_2023-04-10_155919460.webp";
+import ewsmobile from "public/ewsmobile.webp";
+import { GithubSvg } from "../components/Svgs";
+import Image, { StaticImageData } from "next/image";
+import { m } from "framer-motion";
 
 interface Images {
-  [key: string]: { 1: string; 2: string };
+  [key: string]: { 1: string | StaticImageData; 2: string | StaticImageData };
 }
 
 interface Projects {
@@ -62,47 +64,85 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className='py-5 px-2 md:px-10 bg-white rounded-3xl'>
-      <h2 className='mb-10 bg-clip-text font-semibold text-center text-xl md:text-2xl text-blue-400'>
+    <div className='py-5 px-2 md:px-10 bg-black/20 backdrop-blur-lg rounded-3xl'>
+      <h2 className=' text-center text-xl md:text-2xl text-green-500 font-medium'>
         Some of the things I've built
       </h2>
-      <div className='space-y-5'>
+      <div className='border-b border-b-green-500 mt-2 mb-10 w-11/12 mx-auto' />
+      <div className='space-y-44'>
         {projects.map((project) => (
-          <div
+          <m.div
+            initial={{ scale: 0.7, opacity: 0, y: 100 }}
+            whileInView={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ type: "spring", duration: 0.6 }}
             key={project.id}
-            className='flex flex-col md:flex-row items-center w-full'>
-            <a className='w-full md:w-5/12' href={project.webLink}>
-              <img
-                src={images[project.id][1] || ""}
-                className='rounded-2xl w-full md:w-[400px] mb-2'
-              />
-              <img
-                src={images[project.id][2]}
-                className='rounded-2xl w-full md:w-[400px]'
-              />
-            </a>
-            <div className='w-full md:w-7/12 h-fit p-3'>
-              <div className='flex items-center gap-5 md:gap-16 my-5'>
-                <a
-                  className=' flex items-center gap-2 font-semibold text-2xl text-gray-500'
-                  href={project.webLink}>
-                  {project.title}
-                  <ArrowTopRightOnSquareIcon width={30} />
-                </a>
-                {project.githubLink === "private" ? (
-                  <></>
-                ) : (
-                  <a
-                    className='flex flex-col items-center drop-shadow-md'
-                    href={project.githubLink}>
-                    <GithubSvg />
-                    <p>Github</p>
-                  </a>
-                )}
+            className='flex flex-col md:flex-row items-center w-full md:w-2/3 mx-auto gap-10 h-auto'>
+            <div className='flex flex-col w-2/3'>
+              <m.a
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileFocus={{ scale: 0.8 }}
+                transition={{ type: "spring", duration: 0.9 }}
+                href={project.webLink}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <Image
+                  alt=''
+                  width={650}
+                  height={650}
+                  src={images[project.id][1] || ""}
+                  className='rounded-2xl border-4 border-green-600/80 w-auto h-fit mb-2'
+                />
+              </m.a>
+              <div className='w-full h-fit p-7'>
+                <div className='flex items-center justify-between gap-5 md:gap-16 my-5'>
+                  <m.a
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileFocus={{ scale: 0.8 }}
+                    transition={{ type: "spring", duration: 1.7 }}
+                    className=' flex items-center gap-2 font-semibold text-2xl text-green-600'
+                    href={project.webLink}>
+                    {project.title}
+                    {/* <ArrowTopRightOnSquareIcon width={30} /> */}
+                  </m.a>
+                  {project.githubLink === "private" ? (
+                    <div className='flex flex-col items-center drop-shadow-md opacity-50 text-sm'>
+                      <GithubSvg />
+                      <p>private</p>
+                    </div>
+                  ) : (
+                    <a
+                      className='flex flex-col items-center drop-shadow-md opacity-50 text-sm'
+                      href={project.githubLink}>
+                      <GithubSvg />
+                      <p>Github</p>
+                    </a>
+                  )}
+                </div>
+                <p className='w-full text-center text-lg text-neutral-400'>
+                  {project.gist}
+                </p>
               </div>
-              <p className='w-full md:w-9/12 text-lg'>{project.gist}</p>
             </div>
-          </div>
+            <m.a
+              initial={{ scale: 0.5, opacity: 0, y: 170 }}
+              whileInView={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileFocus={{ scale: 0.8 }}
+              viewport={{ amount: "some" }}
+              href={project.webLink}
+              className='w-1/3 h-full'>
+              <Image
+                alt=''
+                width={250}
+                height={541}
+                src={images[project.id][2]}
+                className='rounded-3xl border-4 border-green-600/80 w-auto h-auto'
+              />
+            </m.a>
+          </m.div>
         ))}
       </div>
     </div>
