@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+// import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { m } from "framer-motion";
 
 const skillList: ListProps[] = [
@@ -82,15 +82,22 @@ const MyStack = () => {
     // return () => clearInterval(unsub);
   }, []);
 
-  const [parent] = useAutoAnimate({ duration: 650, easing: "ease-in-out" });
+  // const [parent] = useAutoAnimate({ duration: 650, easing: "ease-in-out" });
+
+  const [dragged, setDragged] = useState(false);
 
   return (
     <m.div
-      initial={{ scale: 0.5, y: 150 }}
-      whileInView={{ scale: 1, y: 0 }}
-      transition={{ type: "spring", duration: 0.6 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{
+        opacity: 1,
+        backgroundColor: "#00000033",
+        backdropFilter: "blur(16px)",
+        scale: 1,
+      }}
+      transition={{ type: "spring", duration: 1, delay: 0.1 }}
       // viewport={{ amount: "some" }}
-      className='md:px-8 w-11/12 py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5'>
+      className='md:px-8 w-11/12 py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px]'>
       <div className='p-2 w-full mx-auto md:w-fit'>
         <div className='rounded-xl w-full md:w-80 p-3 h-full flex flex-col justify-center drop-shadow-sm'>
           <h2 className='text-white text-xl md:text-2xl font-medium text-center m-2'>
@@ -102,12 +109,21 @@ const MyStack = () => {
           </p>
         </div>
       </div>
-      <div
-        ref={parent}
-        className='grid grid-cols-2 md:grid-cols-5 p-10 md:px-10 gap-y-5 gap-x-4 w-full bg-black/20 backdrop-blur-lg rounded-[35px]'>
-        {shuffledList.map((x) => (
-          <SkillBlock key={x.text} className={x.className} text={x.text} />
-        ))}
+      <div className='flex flex-col gap-2 w-full items-center'>
+        <p className='text-centre text-green-600 font-medium'>
+          {!dragged ? "You can move any around 😉" : "woosh !! 😉"}
+        </p>
+        <div className='grid grid-cols-2 md:grid-cols-5 p-10 md:px-10 gap-y-5 gap-x-4 w-full '>
+          {shuffledList.map((x) => (
+            <SkillBlock
+              dragged={dragged}
+              setDragged={setDragged}
+              key={x.text}
+              className={x.className}
+              text={x.text}
+            />
+          ))}
+        </div>
       </div>
     </m.div>
   );
@@ -116,9 +132,13 @@ const MyStack = () => {
 const SkillBlock = ({
   text,
   className,
+  dragged,
+  setDragged,
 }: {
   text: string;
   className: string;
+  dragged: boolean;
+  setDragged: Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
     <m.div
@@ -127,6 +147,7 @@ const SkillBlock = ({
       transition={{ type: "spring", duration: 0.6 }}
       whileHover={{ scale: 1.3, z: 10 }}
       drag
+      onDrag={() => (!dragged ? setDragged(true) : {})}
       className={`py-4 md:p-3 rounded-3xl md:rounded-3xl drop-shadow-sm border shadow-md ${className} cursor-pointer`}>
       <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
         {text}

@@ -45,6 +45,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.MainText {
-  /* text-shadow: 3px 3px gray, -3px -3px gray; */
+@layer components {
+  .center-x {
+    @apply left-1/2 -translate-x-1/2;
+  }
+  .center-y {
+    @apply top-1/2 -translate-y-1/2;
+  }
 }

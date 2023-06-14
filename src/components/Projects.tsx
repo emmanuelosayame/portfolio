@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { forwardRef } from "react";
 import radicalxdashboard from "public/radicalxdashboard.png";
 import radicalxdashboard2 from "public/radicalxdashboard2.jpg";
 import deloranddesktop from "public/image_2023-04-10_180221216.webp";
@@ -62,22 +62,28 @@ const projects = [
   // },
 ];
 
-const Projects = () => {
+const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className='py-5 px-2 md:px-10 bg-black/20 backdrop-blur-lg rounded-3xl'>
+    <div
+      ref={ref}
+      className='py-5 px-2 md:px-10 bg-black/20 backdrop-blur-lg rounded-3xl'>
       <h2 className=' text-center text-xl md:text-2xl text-green-500 font-medium'>
         Some of the things I've built
       </h2>
-      <div className='border-b border-b-green-500 mt-2 mb-10 w-11/12 mx-auto' />
-      <div className='space-y-44'>
+      <div className='border-b border-b-green-500 mt-2 mb-10 w-[95%] md:w-11/12 mx-auto' />
+      <div className='space-y-36 w-full'>
         {projects.map((project) => (
           <m.div
             initial={{ scale: 0.7, opacity: 0, y: 100 }}
-            whileInView={{ scale: 1, opacity: 1, y: 0 }}
+            whileInView={{
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            }}
             transition={{ type: "spring", duration: 0.6 }}
             key={project.id}
-            className='flex flex-col md:flex-row items-center w-full md:w-2/3 mx-auto gap-10 h-auto'>
-            <div className='flex flex-col w-2/3'>
+            className='flex flex-col-reverse md:flex-row items-center w-full md:w-2/3 mx-auto gap-10 h-auto'>
+            <div className='flex flex-col w-full md:w-2/3'>
               <m.a
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
@@ -133,13 +139,13 @@ const Projects = () => {
               whileFocus={{ scale: 0.8 }}
               viewport={{ amount: "some" }}
               href={project.webLink}
-              className='w-1/3 h-full'>
+              className='w-full md:w-1/3 h-full'>
               <Image
                 alt=''
                 width={250}
                 height={541}
                 src={images[project.id][2]}
-                className='rounded-3xl border-4 border-green-600/80 w-auto h-auto'
+                className='rounded-3xl border-4 border-green-600/80 w-auto mx-auto h-auto'
               />
             </m.a>
           </m.div>
@@ -148,6 +154,6 @@ const Projects = () => {
     </div>
     // </Box>
   );
-};
+});
 
 export default Projects;
