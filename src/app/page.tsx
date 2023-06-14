@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main
-      className='flex min-h-screen flex-col items-center justify-between px-3 pt-[650px] md:pt-24 overflow-hidden
+      className='flex min-h-screen flex-col items-center justify-between px-3 pt-[430px] sm:pt-[650px] md:pt-24 pb-28 md:pb-4 overflow-hidden
       h-full gap-10 md:gap-32 w-full'>
       <LeftMetrics />
       <RightMetrics viewProjects={scrollToProjects} />

@@ -95,9 +95,9 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                 <Image
                   alt=''
                   width={650}
-                  height={650}
+                  height={500}
                   src={images[project.id][1] || ""}
-                  className='rounded-2xl border-4 border-green-600/80 w-auto h-fit mb-2'
+                  className='rounded-2xl border-4 border-green-600/80 w-auto h-auto mb-2'
                 />
               </m.a>
               <div className='w-full h-fit p-7'>
@@ -107,7 +107,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                     whileHover={{ scale: 1.1 }}
                     whileFocus={{ scale: 0.8 }}
                     transition={{ type: "spring", duration: 1.7 }}
-                    className=' flex items-center gap-2 font-semibold text-2xl text-green-600'
+                    className=' flex items-center gap-2 font-semibold text-xl md:text-2xl text-green-600'
                     href={project.webLink}>
                     {project.title}
                     {/* <ArrowTopRightOnSquareIcon width={30} /> */}
@@ -126,7 +126,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                     </a>
                   )}
                 </div>
-                <p className='w-full text-center text-lg text-neutral-400'>
+                <p className='w-full text-center text-lg dark:text-neutral-400'>
                   {project.gist}
                 </p>
               </div>

@@ -14,7 +14,7 @@ const Links = () => {
       transition={{ type: "spring", duration: 1, delay: 0.8 }}
       className='fixed left-0 top-0 flex w-full justify-center border-b border-green-300 bg-gradient-to-b from-green-200
            p-3 backdrop-blur-2xl dark:border-green-800 dark:bg-transparent dark:from-inherit lg:static lg:w-auto  
-        lg:rounded-xl lg:border lg:bg-green-200 lg:p-4 lg:dark:bg-green-800/30 text-lg md:text-xl font-medium text-green-700 gap-3'>
+        lg:rounded-xl lg:border lg:bg-green-200 lg:p-4 lg:dark:bg-green-800/30 sm:text-lg md:text-xl font-medium text-green-700 gap-3'>
       <h3>Emmanuel Osayame</h3>
 
       <m.a

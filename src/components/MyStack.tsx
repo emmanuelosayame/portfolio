@@ -97,7 +97,7 @@ const MyStack = () => {
       }}
       transition={{ type: "spring", duration: 1, delay: 0.1 }}
       // viewport={{ amount: "some" }}
-      className='md:px-8 w-11/12 py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px]'>
+      className='md:px-8 w-11/12 py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px] bg-black/20 backdrop-blur-lg'>
       <div className='p-2 w-full mx-auto md:w-fit'>
         <div className='rounded-xl w-full md:w-80 p-3 h-full flex flex-col justify-center drop-shadow-sm'>
           <h2 className='text-white text-xl md:text-2xl font-medium text-center m-2'>
