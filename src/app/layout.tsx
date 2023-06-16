@@ -13,8 +13,8 @@ const poppins = font({
 });
 
 export const metadata = {
-  title: "Osayame Emmanuel",
-  description: "FullStack developer",
+  title: "Emmanuel Osayame",
+  description: "Full-stack developer, Front-end developer",
 };
 
 export default function RootLayout({

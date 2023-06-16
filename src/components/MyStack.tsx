@@ -2,6 +2,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 // import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { m } from "framer-motion";
+import useMediaQuery from "./useMediaQuery";
 
 const skillList: ListProps[] = [
   {
@@ -143,28 +144,26 @@ const SkillBlock = ({
   // setDragged: Dispatch<SetStateAction<boolean>>;
   index: number;
 }) => {
+  const mq = useMediaQuery("(min-width: 800px)");
+
   return (
     <m.div
-      initial={{ scale: 0.5, opacity: 0, x: -150 }}
+      initial={{ scale: 0.5, opacity: 0, x: mq ? -500 : -50 }}
       whileInView={{
         scale: 1,
         opacity: 1,
         x: 0,
         transition: {
           type: "spring",
-          duration: 2.5,
-          delay: (index + 1) * 0.04,
+          duration: 1,
+          delay: (index + 1) * 0.01,
         },
       }}
       viewport={{ once: true }}
-      whileHover={{
-        scale: 1.3,
-        z: 20,
-        transition: { duration: 0.6, delay: 0 },
-      }}
       // drag
       // onDrag={() => (!dragged ? setDragged(true) : {})}
-      className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md ${className} cursor-pointer`}>
+      className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
+      ${className} cursor-pointer`}>
       <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
         {text}
       </p>
