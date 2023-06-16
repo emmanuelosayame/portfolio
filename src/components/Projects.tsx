@@ -74,7 +74,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       <div className='space-y-36 w-full'>
         {projects.map((project) => (
           <m.div
-            initial={{ scale: 0.7, opacity: 0, y: 100 }}
+            initial={{ scale: 0.7, opacity: 0, y: 70 }}
             whileInView={{
               scale: 1,
               opacity: 1,
@@ -82,7 +82,27 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             }}
             transition={{ type: "spring", duration: 0.6 }}
             key={project.id}
-            className='flex flex-col-reverse md:flex-row items-center w-full md:w-2/3 mx-auto gap-10 h-auto'>
+            className='flex flex-col md:flex-row items-center w-full md:w-3/5 mx-auto gap-10 h-auto'>
+            <m.a
+              initial={{ scale: 0.7, opacity: 0, y: 50 }}
+              whileInView={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+              viewport={{ margin: "-15%" }}
+              whileHover={{ scale: 1.1 }}
+              whileFocus={{ scale: 0.8 }}
+              href={project.webLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-full md:w-1/3 h-full'>
+              <Image
+                alt=''
+                width={250}
+                height={541}
+                src={images[project.id][2]}
+                className='rounded-3xl border-4 border-green-600/80 w-auto mx-auto h-auto'
+              />
+            </m.a>
+
             <div className='flex flex-col w-full md:w-2/3'>
               <m.a
                 initial={{ scale: 1 }}
@@ -102,16 +122,12 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
               </m.a>
               <div className='w-full h-fit p-7'>
                 <div className='flex items-center justify-between gap-5 md:gap-16 my-5'>
-                  <m.a
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileFocus={{ scale: 0.8 }}
-                    transition={{ type: "spring", duration: 1.7 }}
+                  <a
                     className=' flex items-center gap-2 font-semibold text-xl md:text-2xl text-green-600'
                     href={project.webLink}>
                     {project.title}
                     {/* <ArrowTopRightOnSquareIcon width={30} /> */}
-                  </m.a>
+                  </a>
                   {project.githubLink === "private" ? (
                     <div className='flex flex-col items-center drop-shadow-md opacity-50 text-sm'>
                       <GithubSvg />
@@ -131,23 +147,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                 </p>
               </div>
             </div>
-            <m.a
-              initial={{ scale: 0.5, opacity: 0, y: 170 }}
-              whileInView={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileFocus={{ scale: 0.8 }}
-              viewport={{ amount: "some" }}
-              href={project.webLink}
-              className='w-full md:w-1/3 h-full'>
-              <Image
-                alt=''
-                width={250}
-                height={541}
-                src={images[project.id][2]}
-                className='rounded-3xl border-4 border-green-600/80 w-auto mx-auto h-auto'
-              />
-            </m.a>
           </m.div>
         ))}
       </div>

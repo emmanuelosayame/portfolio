@@ -6,51 +6,51 @@ import { m } from "framer-motion";
 const skillList: ListProps[] = [
   {
     text: "Javascript",
-    className: "border-yellow-500 text-yellow-500 bg-yellow-500/10",
+    className: "border-yellow-500 text-yellow-500 bg-yellow-500/20",
   },
   {
-    className: "border-blue-600 text-blue-600 bg-blue-500/10",
+    className: "border-blue-600 text-blue-600 bg-blue-500/20",
     text: "Typescript",
   },
   {
-    className: "border-green-700 text-green-700 bg-green-700/10",
+    className: "border-green-700 text-green-700 bg-green-700/20",
     text: "NodeJs",
   },
-  { className: "border-blue-400 text-blue-400 bg-blue-400/10", text: "React" },
+  { className: "border-blue-400 text-blue-400 bg-blue-400/20", text: "React" },
   {
-    className: "border-blue-400 text-blue-400 bg-blue-400/10",
-    text: "R Native",
+    className: "border-blue-400 text-blue-400 bg-blue-400/20",
+    text: "R. Native",
   },
-  { className: "border-white text-white bg-white/10", text: "NextJs" },
-  { className: "border-blue-500 text-blue-500 bg-blue-500/10", text: "Trpc" },
+  { className: "border-white text-white bg-white/20", text: "NextJs" },
+  { className: "border-blue-500 text-blue-500 bg-blue-500/20", text: "Trpc" },
   {
-    className: "border-purple-600 text-purple-600 bg-putext-purple-600/10",
+    className: "border-purple-600 text-purple-600 bg-purple-600/20",
     text: "Redux Tk",
   },
   {
-    className: "border-orange-400 text-orange-400 bg-orange-400/10",
+    className: "border-orange-400 text-orange-400 bg-orange-400/20",
     text: "Firebase",
   },
-  { className: "border-red-900 text-red-900 bg-red-900/10", text: "Express" },
+  { className: "border-red-900 text-red-900 bg-red-900/20", text: "Express" },
   {
-    className: "border-pink-600 text-pink-600 bg-pink-600/10",
+    className: "border-pink-600 text-pink-600 bg-pink-600/20",
     text: "GraphQL",
   },
   {
-    className: "border-green-500 text-green-500 bg-green-500/10",
+    className: "border-green-500 text-green-500 bg-green-500/20",
     text: "MongoDB",
   },
   {
-    className: "border-blue-500 text-blue-500 bg-blue-500/10",
+    className: "border-blue-500 text-blue-500 bg-blue-500/20",
     text: "Postgres",
   },
   {
-    className: "border-neutral-500 text-neutral-500 bg-neutral-500/10",
+    className: "border-neutral-500 text-neutral-500 bg-neutral-500/20",
     text: "Zustand",
   },
-  { className: "border-white text-white bg-white/10", text: "Prisma" },
+  { className: "border-white text-white bg-white/20", text: "Prisma" },
   {
-    className: "border-green-500 text-green-500 bg-green-500/10 md:hidden",
+    className: "border-green-500 text-green-500 bg-green-500/20 md:hidden",
     text: "Drizzle",
   },
 ];
@@ -84,20 +84,20 @@ const MyStack = () => {
 
   // const [parent] = useAutoAnimate({ duration: 650, easing: "ease-in-out" });
 
-  const [dragged, setDragged] = useState(false);
+  // const [dragged, setDragged] = useState(false);
 
   return (
-    <m.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{
-        opacity: 1,
-        backgroundColor: "#00000033",
-        backdropFilter: "blur(16px)",
-        scale: 1,
-      }}
-      transition={{ type: "spring", duration: 1, delay: 0.1 }}
+    <div
+      // initial={{ opacity: 0, scale: 0.9 }}
+      // whileInView={{
+      //   opacity: 1,
+      //   backgroundColor: "#00000033",
+      //   backdropFilter: "blur(16px)",
+      //   scale: 1,
+      // }}
+      // transition={{ type: "spring", duration: 1, delay: 0.1 }}
       // viewport={{ amount: "some" }}
-      className='md:px-8 w-11/12 py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px] bg-black/20 backdrop-blur-lg'>
+      className='md:px-8 w-[98%] py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px] bg-black/20 backdrop-blur-lg'>
       <div className='p-2 w-full mx-auto md:w-fit'>
         <div className='rounded-xl w-full md:w-80 p-3 h-full flex flex-col justify-center drop-shadow-sm'>
           <h2 className='text-white text-xl md:text-2xl font-medium text-center m-2'>
@@ -111,13 +111,14 @@ const MyStack = () => {
       </div>
       <div className='flex flex-col gap-2 w-full items-center'>
         <p className='text-centre text-green-600 font-medium'>
-          {!dragged ? "You can move any around 😉" : "woosh !! 😉"}
+          {/* {!dragged ? "You can move any around 😉" : "woosh !! 😉"} */}
         </p>
-        <div className='grid grid-cols-2 md:grid-cols-5 p-10 md:px-10 gap-y-5 gap-x-4 w-full '>
-          {shuffledList.map((x) => (
+        <div className='grid grid-cols-2 md:grid-cols-5 p-5 md:px-10 gap-y-5 gap-x-4 w-full md:w-10/12 '>
+          {shuffledList.map((x, index) => (
             <SkillBlock
-              dragged={dragged}
-              setDragged={setDragged}
+              index={index}
+              // dragged={dragged}
+              // setDragged={setDragged}
               key={x.text}
               className={x.className}
               text={x.text}
@@ -125,30 +126,45 @@ const MyStack = () => {
           ))}
         </div>
       </div>
-    </m.div>
+    </div>
   );
 };
 
 const SkillBlock = ({
   text,
   className,
-  dragged,
-  setDragged,
+  // dragged,
+  // setDragged,
+  index,
 }: {
   text: string;
   className: string;
-  dragged: boolean;
-  setDragged: Dispatch<SetStateAction<boolean>>;
+  // dragged: boolean;
+  // setDragged: Dispatch<SetStateAction<boolean>>;
+  index: number;
 }) => {
   return (
     <m.div
-      initial={{ scale: 0.7, opacity: 0, y: 150 }}
-      animate={{ scale: 1, opacity: 1, y: 0 }}
-      transition={{ type: "spring", duration: 0.6 }}
-      whileHover={{ scale: 1.3, z: 10 }}
-      drag
-      onDrag={() => (!dragged ? setDragged(true) : {})}
-      className={`py-4 md:p-3 rounded-3xl md:rounded-3xl drop-shadow-sm border shadow-md ${className} cursor-pointer`}>
+      initial={{ scale: 0.5, opacity: 0, x: -150 }}
+      whileInView={{
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 2.5,
+          delay: (index + 1) * 0.04,
+        },
+      }}
+      viewport={{ once: true }}
+      whileHover={{
+        scale: 1.3,
+        z: 20,
+        transition: { duration: 0.6, delay: 0 },
+      }}
+      // drag
+      // onDrag={() => (!dragged ? setDragged(true) : {})}
+      className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md ${className} cursor-pointer`}>
       <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
         {text}
       </p>
