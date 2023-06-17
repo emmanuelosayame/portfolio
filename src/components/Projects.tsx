@@ -74,7 +74,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
       <div className='space-y-36 w-full'>
         {projects.map((project) => (
           <m.div
-            initial={{ scale: 0.7, opacity: 0, y: 70 }}
+            initial={{ scale: 0.7, opacity: 0, y: 50 }}
             whileInView={{
               scale: 1,
               opacity: 1,
@@ -83,17 +83,11 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
             transition={{ type: "spring", duration: 0.6 }}
             key={project.id}
             className='flex flex-col md:flex-row items-center w-full md:w-3/5 mx-auto gap-10 h-auto'>
-            <m.a
-              initial={{ scale: 0.7, opacity: 0, y: 50 }}
-              whileInView={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-              viewport={{ margin: "-15%" }}
-              whileHover={{ scale: 1.1 }}
-              whileFocus={{ scale: 0.8 }}
+            <a
               href={project.webLink}
               target='_blank'
               rel='noopener noreferrer'
-              className='w-full md:w-1/3 h-full'>
+              className='w-full md:w-1/3 h-full hover:scale-110 transition-all'>
               <Image
                 alt=''
                 width={250}
@@ -101,14 +95,10 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                 src={images[project.id][2]}
                 className='rounded-3xl border-4 border-green-600/80 w-auto mx-auto h-auto'
               />
-            </m.a>
+            </a>
 
             <div className='flex flex-col w-full md:w-2/3'>
-              <m.a
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileFocus={{ scale: 0.8 }}
-                transition={{ type: "spring", duration: 0.9 }}
+              <a
                 href={project.webLink}
                 target='_blank'
                 rel='noopener noreferrer'>
@@ -117,9 +107,9 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                   width={650}
                   height={500}
                   src={images[project.id][1] || ""}
-                  className='rounded-2xl border-4 border-green-600/80 w-auto h-auto mb-2'
+                  className='rounded-2xl border-4 border-green-600/80 w-auto h-auto mb-2 hover:scale-110 transition-all'
                 />
-              </m.a>
+              </a>
               <div className='w-full h-fit p-7'>
                 <div className='flex items-center justify-between gap-5 md:gap-16 my-5'>
                   <a

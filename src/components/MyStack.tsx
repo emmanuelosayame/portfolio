@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 // import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { m } from "framer-motion";
 import useMediaQuery from "./useMediaQuery";
+import Tilt from "react-parallax-tilt";
 
 const skillList: ListProps[] = [
   {
@@ -64,13 +65,13 @@ interface ListProps {
 const MyStack = () => {
   const [shuffledList, setSL] = useState<ListProps[]>([]);
 
+  const shuffle = skillList
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
   useEffect(() => {
-    setSL(
-      skillList
-        .map((value) => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value)
-    );
+    setSL(shuffle);
     // const unsub = setInterval(() => {
     //   setSL(
     //     skillList
@@ -87,17 +88,25 @@ const MyStack = () => {
 
   // const [dragged, setDragged] = useState(false);
 
+  const mq = useMediaQuery("(min-width: 800px)");
+
   return (
-    <div
-      // initial={{ opacity: 0, scale: 0.9 }}
-      // whileInView={{
-      //   opacity: 1,
-      //   backgroundColor: "#00000033",
-      //   backdropFilter: "blur(16px)",
-      //   scale: 1,
-      // }}
-      // transition={{ type: "spring", duration: 1, delay: 0.1 }}
-      // viewport={{ amount: "some" }}
+    <Tilt
+      // onViewportEnter={() => setSL(shuffle)}
+      // initial={mq ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
+      // whileInView={
+      //   mq
+      //     ? {}
+      //     : {
+      //         opacity: 1,
+      //         y: 0,
+      //         scale: 1,
+      //         transition: {
+      //           // duration: 1,
+      //         },
+      //       }
+      // }
+      // viewport={{ amount: 0.2 }}
       className='md:px-8 w-[98%] py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px] bg-black/20 backdrop-blur-lg'>
       <div className='p-2 w-full mx-auto md:w-fit'>
         <div className='rounded-xl w-full md:w-80 p-3 h-full flex flex-col justify-center drop-shadow-sm'>
@@ -127,7 +136,7 @@ const MyStack = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Tilt>
   );
 };
 
@@ -147,27 +156,35 @@ const SkillBlock = ({
   const mq = useMediaQuery("(min-width: 800px)");
 
   return (
-    <m.div
-      initial={{ scale: 0.5, opacity: 0, x: mq ? -500 : -50 }}
-      whileInView={{
-        scale: 1,
-        opacity: 1,
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          delay: (index + 1) * 0.01,
-        },
-      }}
-      viewport={{ once: true }}
-      // drag
-      // onDrag={() => (!dragged ? setDragged(true) : {})}
-      className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
+    <>
+      {mq ? (
+        <m.div
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{
+            scale: 1,
+            opacity: 1,
+            transition: {
+              type: "spring",
+              // duration: 1,
+              delay: (index + 1) * 0.08,
+            },
+          }}
+          className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
       ${className} cursor-pointer`}>
-      <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
-        {text}
-      </p>
-    </m.div>
+          <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
+            {text}
+          </p>
+        </m.div>
+      ) : (
+        <div
+          className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
+      ${className} cursor-pointer`}>
+          <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
+            {text}
+          </p>
+        </div>
+      )}
+    </>
   );
 };
 
