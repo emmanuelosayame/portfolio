@@ -53,3 +53,11 @@ body {
     @apply top-1/2 -translate-y-1/2;
   }
 }
+
+.swiper-pagination-bullet {
+  background-color: rgba(0, 128, 0, 0.644) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: green !important;
+}

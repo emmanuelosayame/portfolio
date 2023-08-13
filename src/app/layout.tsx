@@ -1,20 +1,21 @@
-import Client from "./Client";
-import "./globals.css";
-import font from "next/font/local";
+import Client from './Client';
+import './globals.css';
+import font from 'next/font/local';
 
 const poppins = font({
   src: [
     {
-      path: "../../public/SpaceGrotesk-VariableFont_wght.ttf",
-      style: "normal",
+      path: '../../public/SpaceGrotesk-VariableFont_wght.ttf',
+      style: 'normal',
     },
   ],
-  variable: "--font-space-grotesk",
+  variable: '--font-space-grotesk',
 });
 
 export const metadata = {
-  title: "Emmanuel Osayame",
-  description: "Full-stack developer, Front-end developer",
+  title: 'Emmanuel Osayame',
+  description:
+    'Full-stack developer, Front-end developer, React.js, Next.js, Typescript, Javascript.',
 };
 
 export default function RootLayout({

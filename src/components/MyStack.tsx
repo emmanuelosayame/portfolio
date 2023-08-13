@@ -1,59 +1,59 @@
-"use client";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+'use client';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 // import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { m } from "framer-motion";
-import useMediaQuery from "./useMediaQuery";
-import Tilt from "react-parallax-tilt";
+import { m } from 'framer-motion';
+import useMediaQuery from './useMediaQuery';
+import Tilt from 'react-parallax-tilt';
 
 const skillList: ListProps[] = [
   {
-    text: "Javascript",
-    className: "border-yellow-500 text-yellow-500 bg-yellow-500/20",
+    text: 'Javascript',
+    className: 'border-yellow-500 text-yellow-500 bg-yellow-500/20',
   },
   {
-    className: "border-blue-600 text-blue-600 bg-blue-500/20",
-    text: "Typescript",
+    className: 'border-blue-600 text-blue-600 bg-blue-500/20',
+    text: 'Typescript',
   },
   {
-    className: "border-green-700 text-green-700 bg-green-700/20",
-    text: "NodeJs",
+    className: 'border-green-700 text-green-700 bg-green-700/20',
+    text: 'NodeJs',
   },
-  { className: "border-blue-400 text-blue-400 bg-blue-400/20", text: "React" },
+  { className: 'border-blue-400 text-blue-400 bg-blue-400/20', text: 'React' },
   {
-    className: "border-blue-400 text-blue-400 bg-blue-400/20",
-    text: "R. Native",
+    className: 'border-blue-400 text-blue-400 bg-blue-400/20',
+    text: 'R. Native',
   },
-  { className: "border-white text-white bg-white/20", text: "NextJs" },
-  { className: "border-blue-500 text-blue-500 bg-blue-500/20", text: "Trpc" },
+  { className: 'border-white text-white bg-white/20', text: 'NextJs' },
+  { className: 'border-blue-500 text-blue-500 bg-blue-500/20', text: 'Trpc' },
   {
-    className: "border-purple-600 text-purple-600 bg-purple-600/20",
-    text: "Redux Tk",
-  },
-  {
-    className: "border-orange-400 text-orange-400 bg-orange-400/20",
-    text: "Firebase",
-  },
-  { className: "border-red-900 text-red-900 bg-red-900/20", text: "Express" },
-  {
-    className: "border-pink-600 text-pink-600 bg-pink-600/20",
-    text: "GraphQL",
+    className: 'border-purple-600 text-purple-600 bg-purple-600/20',
+    text: 'Redux Tk',
   },
   {
-    className: "border-green-500 text-green-500 bg-green-500/20",
-    text: "MongoDB",
+    className: 'border-orange-400 text-orange-400 bg-orange-400/20',
+    text: 'Firebase',
+  },
+  { className: 'border-red-900 text-red-900 bg-red-900/20', text: 'Express' },
+  {
+    className: 'border-pink-600 text-pink-600 bg-pink-600/20',
+    text: 'GraphQL',
   },
   {
-    className: "border-blue-500 text-blue-500 bg-blue-500/20",
-    text: "Postgres",
+    className: 'border-green-500 text-green-500 bg-green-500/20',
+    text: 'MongoDB',
   },
   {
-    className: "border-neutral-500 text-neutral-500 bg-neutral-500/20",
-    text: "Zustand",
+    className: 'border-blue-500 text-blue-500 bg-blue-500/20',
+    text: 'Postgres',
   },
-  { className: "border-white text-white bg-white/20", text: "Prisma" },
   {
-    className: "border-green-500 text-green-500 bg-green-500/20 md:hidden",
-    text: "Drizzle",
+    className: 'border-neutral-500 text-neutral-500 bg-neutral-500/20',
+    text: 'Zustand',
+  },
+  { className: 'border-white text-white bg-white/20', text: 'Prisma' },
+  {
+    className: 'border-green-500 text-green-500 bg-green-500/20 md:hidden',
+    text: 'Drizzle',
   },
 ];
 
@@ -88,7 +88,7 @@ const MyStack = () => {
 
   // const [dragged, setDragged] = useState(false);
 
-  const mq = useMediaQuery("(min-width: 800px)");
+  const mq = useMediaQuery('(min-width: 800px)');
 
   return (
     <Tilt
@@ -153,7 +153,7 @@ const SkillBlock = ({
   // setDragged: Dispatch<SetStateAction<boolean>>;
   index: number;
 }) => {
-  const mq = useMediaQuery("(min-width: 800px)");
+  const mq = useMediaQuery('(min-width: 800px)');
 
   return (
     <>
@@ -164,11 +164,12 @@ const SkillBlock = ({
             scale: 1,
             opacity: 1,
             transition: {
-              type: "spring",
+              type: 'spring',
               // duration: 1,
-              delay: (index + 1) * 0.08,
+              delay: (index + 1) * 0.03,
             },
           }}
+          viewport={{ once: true }}
           className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
       ${className} cursor-pointer`}>
           <p className={`text-center whitespace-nowrap text-base md:text-xl`}>

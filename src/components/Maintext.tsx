@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { m } from 'framer-motion';
 
 const Maintext = () => {
   return (
@@ -11,7 +11,7 @@ const Maintext = () => {
         <h1
           className='text-base md:text-lg center-y whitespace-nowrap z-10 opacity-20 dark:text-green-400
            flex gap-7 md:gap-44'>
-          Web app <span className='dark:text-green-200'>Mobile app</span>{" "}
+          Web app <span className='dark:text-green-200'>Mobile app</span>{' '}
           <span className='md:hidden dark:text-green- block'>Backend</span>
           <span className='hidden md:block'>Typical backend</span>
         </h1>
@@ -20,13 +20,13 @@ const Maintext = () => {
             className='text-black dark:text-green-500 md:text-green-500'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, type: "spring", delay: 1.2 }}>
-            Full-Stack
+            transition={{ duration: 1.5, type: 'spring', delay: 1.2 }}>
+            Front-End
           </m.h1>
           <m.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, type: "spring", delay: 1.8 }}>
+            transition={{ duration: 1.5, type: 'spring', delay: 1.8 }}>
             Developer
           </m.h1>
         </div>

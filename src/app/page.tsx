@@ -1,12 +1,15 @@
-"use client";
-import AboutMe from "@/components/AboutMe";
-import Links from "@/components/Links";
-import Maintext from "@/components/Maintext";
-import { LeftMetrics, RightMetrics } from "@/components/Metrics";
-import MyStack from "@/components/MyStack";
-import Projects from "@/components/Projects";
-import { m } from "framer-motion";
-import { useRef } from "react";
+'use client';
+import AboutMe from '@/components/AboutMe';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import Links from '@/components/Links';
+import Maintext from '@/components/Maintext';
+import { LeftMetrics, RightMetrics } from '@/components/Metrics';
+import MyStack from '@/components/MyStack';
+import Testimonials from '@/components/Testimonials';
+import Projects from '@/components/projects';
+import { m } from 'framer-motion';
+import { useRef } from 'react';
 // import resume from "../../public/Emmanuel Osayame.pdf";
 
 export default function Home() {
@@ -14,15 +17,15 @@ export default function Home() {
 
   const scrollToProjects = () => {
     projectRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+      behavior: 'smooth',
+      block: 'start',
     });
   };
 
   return (
     <main
       className='flex min-h-screen flex-col items-center justify-between px-3 pt-[430px] sm:pt-[650px] md:pt-24 pb-28 md:pb-4 overflow-hidden
-      h-full gap-10 md:gap-72 w-full'>
+      h-full gap-10 md:gap-64 w-full'>
       <LeftMetrics />
       <RightMetrics viewProjects={scrollToProjects} />
 
@@ -63,6 +66,12 @@ export default function Home() {
       <MyStack />
 
       <Projects ref={projectRef} />
+
+      <Testimonials />
+
+      <Contact />
+
+      <Footer />
     </main>
   );
 }
