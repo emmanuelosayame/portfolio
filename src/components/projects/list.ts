@@ -1,10 +1,12 @@
-import radicalxdashboard2 from 'public/radical-x-mobile.webp';
-import delorandmobile from 'public/delorand-mobile.webp';
-import ewsmobile from 'public/ewsmobile.webp';
-import salestrack from 'public/sales-track.webp';
+import radicalxdashboard2 from '../../../public/radical-x-mobile.webp';
+import delorandmobile from '../../../public/delorand.webp';
+import ewsmobile from '../../../public/ewsmobile.webp';
+import chesterfieldmobile from '../../../public/chesterfield-mobile.webp';
+import salestrack from '../../../public/sales-track.webp';
 import { StaticImageData } from 'next/image';
 
 export const images: { [key: string]: StaticImageData } = {
+  chesterfield: chesterfieldmobile,
   ews: ewsmobile,
   radicalx: radicalxdashboard2,
   delorand: delorandmobile,
@@ -12,6 +14,28 @@ export const images: { [key: string]: StaticImageData } = {
 };
 
 export const list = [
+  {
+    id: 'chesterfield',
+    webLink: 'https://chesterfieldhq.com',
+    githubLink: 'private',
+    title: 'Chesterfield',
+    gist: 'An interior design firm based in Lagos, Nigeria. With a commitment to creating stunning and functional spaces, our team of talented designers, decorators and artisans focuses on understanding our clients‘ unique needs and delivering exceptional results. From residential to commercial projects, we strive to exceed expectations with our creative vision and attention to detail.',
+    perks: {
+      responsiveness: '101%',
+      pageInsight: '97%',
+      providedDesign: 'true',
+      implementationGrade: 'pixel perfect',
+      fieldsWorkedOn: 'Front-end, email-serv..',
+    },
+    clientFeedBack: [
+      {
+        position: 'Owner',
+        name: 'Chesterfield',
+        feedback:
+          "I'm thrilled with the website you crafted for our premium interior design firm. Your talent and attention to detail have truly elevated our online presence. The site's design and functionality exceeded our expectations. Thanks for your exceptional work!",
+      },
+    ],
+  },
   {
     id: 'ews',
     webLink: 'https://www.eternalworkspace.com',

@@ -62,7 +62,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                       viewBox='0 0 24 24'
                       stroke-width='2.5'
                       stroke='currentColor'
-                      className='w-6 h-6'>
+                      className='w-[22px] h-[22px]'>
                       <path
                         stroke-linecap='round'
                         stroke-linejoin='round'
@@ -108,15 +108,6 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                   </p>
                 </div>
 
-                {project.perks.implementationGrade && (
-                  <div className='flex justify-between items-center'>
-                    <p>Implementation grade</p>
-                    <p className='text-green-600'>
-                      {project.perks.implementationGrade}
-                    </p>
-                  </div>
-                )}
-
                 <div className='flex justify-between items-center'>
                   <p>Fields worked-on</p>
                   <p className='text-green-600 w-1/2 text-sm md:text-base text-end'>
@@ -132,7 +123,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
 
                 {project.clientFeedBack.map((client, index) => (
                   <div key={index} className=''>
-                    <p className='flex gap-2 items-center mt-4'>
+                    <p className='flex gap-2 items-center mt-4 mb-2'>
                       {client.name}
                       <span className='text-[10px] bg-neutral-500 px-1 rounded'>
                         {client.position}

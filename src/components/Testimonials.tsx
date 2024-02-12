@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css';
 import Image from 'next/image';
-import image from 'public/favicon-32x32.png';
+import image from '../../public/favicon-32x32.png';
 
 const testimonials = [
   {
@@ -20,12 +20,17 @@ const testimonials = [
     name: 'Ikemba Chibueze',
     gist: "Easy to approch and relate with. He always come through and that's satisfactory.",
   },
+
+  {
+    name: 'Clement',
+    gist: 'Your keen attention to detail and seamless integration of design elements have elevated our projects to new heights. Looking forward to continued success together!',
+  },
 ];
 
 const Testimonials = () => {
   return (
     <div className='w-full md:w-1/5 space-y-4'>
-      <h4 className='text-xl md:text-2xl font-medium text-green-600 drop-shadow-md text-center'>
+      <h4 className='text-xl md:text-2xl font-medium text-green-700 drop-shadow-md text-center'>
         Testimonials
       </h4>
 
@@ -33,7 +38,7 @@ const Testimonials = () => {
         className='w-full md:w-full bg-green-600/20 backdrop-blur-md rounded-xl overflow-hidden'
         modules={[Pagination, Autoplay]}
         pagination={{ el: '.pagn' }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 5000 }}
         slidesPerView={1}
         centeredSlides={true}>
         {testimonials.map(({ name, gist }, index) => (
@@ -49,7 +54,9 @@ const Testimonials = () => {
               width={100}
               height={100}
             />
-            <p className='text-neutral-200 font-medium text-lg'>{name}</p>
+            <p className='text-black dark:text-white font-medium text-lg'>
+              {name}
+            </p>
             <p>"{gist}"</p>
           </SwiperSlide>
         ))}

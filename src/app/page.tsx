@@ -45,14 +45,6 @@ export default function Home() {
               className='text-red-500 font-medium text-sm md:bg-white px-2 py-0.5 md:opacity-30 rounded'>
               delorand
             </m.h3>
-            {/* <Image
-              src='/vercel.svg'
-              alt='Vercel Logo'
-              className='dark:invert'
-              width={100}
-              height={24}
-              priority
-            /> */}
           </a>
         </div>
 

@@ -21,7 +21,7 @@ const Maintext = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, type: 'spring', delay: 1.2 }}>
-            Front-End
+            Full-Stack
           </m.h1>
           <m.h1
             initial={{ opacity: 0 }}
