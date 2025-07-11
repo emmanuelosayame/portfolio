@@ -1,48 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --apple-accent: rgb(255, 255, 255);
+  --apple-gray: rgb(142, 142, 147);
+  --apple-light-gray: rgb(28, 28, 30);
+  --apple-card-bg: rgba(28, 28, 30, 0.8);
+  --apple-glass: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
 }
 
 * ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 * ::-webkit-scrollbar-track {
-  background-color: rgb(34 197 94/0.2);
+  background-color: transparent;
 }
 
 * ::-webkit-scrollbar-thumb {
-  background-color: rgb(34 197 94);
-  border-radius: 20px;
-  /* border: 6px solid transparent; */
-  /* background-clip: content-box; */
+  background-color: var(--apple-gray);
+  border-radius: 4px;
 }
 
 * ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(34 197 94/0.5);
+  background-color: rgb(255, 255, 255);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    135deg,
+    rgb(0, 0, 0) 0%,
+    rgb(20, 20, 20) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  min-height: 100vh;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+      'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 }
 
 @layer components {
@@ -52,12 +60,100 @@ body {
   .center-y {
     @apply top-1/2 -translate-y-1/2;
   }
+
+  /* Apple-style glass morphism */
+  .apple-glass {
+    background: var(--apple-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Apple-style cards */
+  .apple-card {
+    background: var(--apple-card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+
+  /* Apple-style buttons */
+  .apple-button {
+    background: var(--apple-accent);
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .apple-button:hover {
+    background: rgb(240, 240, 240);
+    transform: translateY(-1px);
+  }
+
+  /* Apple-style text */
+  .apple-text-primary {
+    color: rgb(255, 255, 255);
+  }
+
+  .apple-text-secondary {
+    color: var(--apple-gray);
+  }
+
+  .apple-text-accent {
+    color: var(--apple-accent);
+  }
+
+  /* Apple-style animations */
+  .apple-fade-in {
+    animation: appleFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .apple-scale-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .apple-scale-hover:hover {
+    transform: scale(1.02);
+  }
+
+  /* Apple-style gradients */
+  .apple-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--apple-accent) 0%,
+      rgb(200, 200, 200) 100%
+    );
+  }
+
+  .apple-gradient-text {
+    background: linear-gradient(
+      135deg,
+      var(--apple-accent) 0%,
+      rgb(200, 200, 200) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes appleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .swiper-pagination-bullet {
-  background-color: rgba(0, 128, 0, 0.644) !important;
+  background-color: var(--apple-gray) !important;
+  opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: green !important;
+  background-color: var(--apple-accent) !important;
+  opacity: 1;
 }

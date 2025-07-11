@@ -1,15 +1,11 @@
-import Client from './Client';
+import Client from './client';
 import './globals.css';
-import font from 'next/font/local';
+import { DM_Sans } from 'next/font/google';
 
-const poppins = font({
-  src: [
-    {
-      path: '../../public/SpaceGrotesk-VariableFont_wght.ttf',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-space-grotesk',
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
 });
 
 export const metadata = {
@@ -25,8 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${poppins.variable} font-space-grotesk`}>
-        <Client> {children}</Client>
+      <body className={`${dmSans.variable} font-dm-sans`}>
+        <Client>{children}</Client>
       </body>
     </html>
   );

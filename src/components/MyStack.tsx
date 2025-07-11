@@ -1,191 +1,68 @@
 'use client';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-// import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { useState } from 'react';
 import { m } from 'framer-motion';
-import useMediaQuery from './useMediaQuery';
-import Tilt from 'react-parallax-tilt';
-
-const skillList: ListProps[] = [
-  {
-    text: 'Javascript',
-    className: 'border-yellow-500 text-yellow-500 bg-yellow-500/20',
-  },
-  {
-    className: 'border-blue-600 text-blue-600 bg-blue-500/20',
-    text: 'Typescript',
-  },
-  {
-    className: 'border-green-700 text-green-700 bg-green-700/20',
-    text: 'NodeJs',
-  },
-  { className: 'border-blue-400 text-blue-400 bg-blue-400/20', text: 'React' },
-  {
-    className: 'border-blue-400 text-blue-400 bg-blue-400/20',
-    text: 'R. Native',
-  },
-  { className: 'border-white text-white bg-white/20', text: 'NextJs' },
-  { className: 'border-blue-500 text-blue-500 bg-blue-500/20', text: 'Trpc' },
-  {
-    className: 'border-purple-600 text-purple-600 bg-purple-600/20',
-    text: 'Redux Tk',
-  },
-  {
-    className: 'border-orange-400 text-orange-400 bg-orange-400/20',
-    text: 'Firebase',
-  },
-  { className: 'border-red-900 text-red-900 bg-red-900/20', text: 'Express' },
-  {
-    className: 'border-pink-600 text-pink-600 bg-pink-600/20',
-    text: 'GraphQL',
-  },
-  {
-    className: 'border-green-500 text-green-500 bg-green-500/20',
-    text: 'MongoDB',
-  },
-  {
-    className: 'border-blue-500 text-blue-500 bg-blue-500/20',
-    text: 'Postgres',
-  },
-  {
-    className: 'border-neutral-500 text-neutral-500 bg-neutral-500/20',
-    text: 'Zustand',
-  },
-  { className: 'border-white text-white bg-white/20', text: 'Prisma' },
-  {
-    className: 'border-green-500 text-green-500 bg-green-500/20 md:hidden',
-    text: 'Drizzle',
-  },
-];
-
-interface ListProps {
-  text: string;
-  className: string;
-}
+import useMediaQuery from './usemediaquery';
 
 const MyStack = () => {
-  const [shuffledList, setSL] = useState<ListProps[]>([]);
+  const [dragged, setDragged] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const shuffle = skillList
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-
-  useEffect(() => {
-    setSL(shuffle);
-    // const unsub = setInterval(() => {
-    //   setSL(
-    //     skillList
-    //       .map((value) => ({ value, sort: Math.random() }))
-    //       .sort((a, b) => a.sort - b.sort)
-    //       .map(({ value }) => value)
-    //   );
-    // }, 5000);
-
-    // return () => clearInterval(unsub);
-  }, []);
-
-  // const [parent] = useAutoAnimate({ duration: 650, easing: "ease-in-out" });
-
-  // const [dragged, setDragged] = useState(false);
-
-  const mq = useMediaQuery('(min-width: 800px)');
+  const stackItems = [
+    { text: 'React', icon: '⚛️' },
+    { text: 'Next.js', icon: '▲' },
+    { text: 'TypeScript', icon: '📘' },
+    { text: 'TailwindCSS', icon: '🎨' },
+    { text: 'Node.js', icon: '🟢' },
+    { text: 'MongoDB', icon: '🍃' },
+    { text: 'Prisma', icon: '🔧' },
+    { text: 'Drizzle', icon: '❄️' },
+  ];
 
   return (
-    <Tilt
-      // onViewportEnter={() => setSL(shuffle)}
-      // initial={mq ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
-      // whileInView={
-      //   mq
-      //     ? {}
-      //     : {
-      //         opacity: 1,
-      //         y: 0,
-      //         scale: 1,
-      //         transition: {
-      //           // duration: 1,
-      //         },
-      //       }
-      // }
-      // viewport={{ amount: 0.2 }}
-      className='md:px-8 w-[98%] py-5 md:w-5/8 flex justify-center flex-col md:flex-row gap-5 rounded-[35px] bg-black/20 backdrop-blur-lg'>
-      <div className='p-2 w-full mx-auto md:w-fit'>
-        <div className='rounded-xl w-full md:w-80 p-3 h-full flex flex-col justify-center drop-shadow-sm'>
-          <h2 className='text-white text-xl md:text-2xl font-medium text-center m-2'>
-            <span className='text-green-500'>My</span> Stack
+    <m.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+      viewport={{ once: true }}
+      className='w-full max-w-6xl mx-auto'>
+      <div className='apple-card p-8 md:p-12 space-y-8'>
+        <div className='text-center space-y-4'>
+          <h2 className='text-3xl md:text-4xl font-bold apple-text-primary'>
+            My <span className='apple-text-accent'>Stack</span>
           </h2>
-          <p className='text-center'>
-            A few of the technologies I work with. These are tools I'm familiar
-            with.
+
+          <div className='w-16 h-0.5 apple-gradient mx-auto rounded-full' />
+
+          <p className='text-lg md:text-xl apple-text-secondary max-w-3xl mx-auto leading-relaxed'>
+            I work with the best and most stable technologies to achieve
+            lightning speeds and highly optimized applications.
           </p>
         </div>
-      </div>
-      <div className='flex flex-col gap-2 w-full items-center'>
-        <p className='text-centre text-green-600 font-medium'>
-          {/* {!dragged ? "You can move any around 😉" : "woosh !! 😉"} */}
-        </p>
-        <div className='grid grid-cols-2 md:grid-cols-5 p-5 md:px-10 gap-y-5 gap-x-4 w-full md:w-10/12 '>
-          {shuffledList.map((x, index) => (
-            <SkillBlock
-              index={index}
-              // dragged={dragged}
-              // setDragged={setDragged}
-              key={x.text}
-              className={x.className}
-              text={x.text}
-            />
+
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+          {stackItems.map((item, index) => (
+            <m.div
+              key={index}
+              className='apple-glass rounded-xl p-6 text-center space-y-3 apple-scale-hover'
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}>
+              <div className='text-3xl md:text-4xl'>{item.icon}</div>
+              <div className='text-sm md:text-base font-medium apple-text-primary'>
+                {item.text}
+              </div>
+            </m.div>
           ))}
         </div>
       </div>
-    </Tilt>
-  );
-};
-
-const SkillBlock = ({
-  text,
-  className,
-  // dragged,
-  // setDragged,
-  index,
-}: {
-  text: string;
-  className: string;
-  // dragged: boolean;
-  // setDragged: Dispatch<SetStateAction<boolean>>;
-  index: number;
-}) => {
-  const mq = useMediaQuery('(min-width: 800px)');
-
-  return (
-    <>
-      {mq ? (
-        <m.div
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{
-            scale: 1,
-            opacity: 1,
-            transition: {
-              type: 'spring',
-              // duration: 1,
-              delay: (index + 1) * 0.03,
-            },
-          }}
-          viewport={{ once: true }}
-          className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
-      ${className} cursor-pointer`}>
-          <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
-            {text}
-          </p>
-        </m.div>
-      ) : (
-        <div
-          className={`py-5 md:py-10 rounded-2xl md:rounded-3xl drop-shadow-sm border shadow-md
-      ${className} cursor-pointer`}>
-          <p className={`text-center whitespace-nowrap text-base md:text-xl`}>
-            {text}
-          </p>
-        </div>
-      )}
-    </>
+    </m.div>
   );
 };
 

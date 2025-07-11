@@ -1,35 +1,44 @@
+'use client';
 import { m } from 'framer-motion';
 
 const Maintext = () => {
   return (
-    <div className='top-[270px] sm:top-[350px] md:top-80 fixed'>
-      <div
-        className="relative flex flex-col place-items-center justify-center before:absolute before:h-[300px] before:w-[380px] before:-translate-x-1/4 
-      before:rounded-full before:bg-gradient-radial before:from-green-200 before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[300px] after:translate-x-1/3 after:bg-gradient-conic after:from-green-100 after:via-green-200 
-      after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-green-700 
-      before:dark:opacity-10 after:dark:from-green-900 after:dark:via-[#3cff01] after:dark:opacity-40 before:lg:h-[360px]">
-        <h1
-          className='text-base md:text-lg center-y whitespace-nowrap z-10 opacity-20 dark:text-green-400
-           flex gap-7 md:gap-44'>
-          Web app <span className='dark:text-green-200'>Mobile app</span>{' '}
-          <span className='md:hidden dark:text-green- block'>Backend</span>
-          <span className='hidden md:block'>Typical backend</span>
-        </h1>
-        <div className='text-2xl sm:text-4xl md:text-6xl font-bold MainText text-green-500 text-center flex gap-3 z-10'>
+    <div className='relative flex flex-col items-center justify-center min-h-screen'>
+      <div className='text-center space-y-8'>
+        <m.h1
+          className='text-sm md:text-base apple-text-secondary font-medium tracking-wide'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}>
+          Web app • Mobile app • Backend
+        </m.h1>
+
+        <div className='space-y-4'>
           <m.h1
-            className='text-black dark:text-green-500 md:text-green-500'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, type: 'spring', delay: 1.2 }}>
+            className='text-3xl sm:text-5xl md:text-6xl font-bold apple-text-primary tracking-tight'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}>
             Full-Stack
           </m.h1>
+
           <m.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, type: 'spring', delay: 1.8 }}>
+            className='text-3xl sm:text-5xl md:text-6xl font-bold apple-gradient-text tracking-tight'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}>
             Developer
           </m.h1>
         </div>
+
+        <m.p
+          className='text-lg md:text-xl apple-text-secondary max-w-2xl mx-auto leading-relaxed'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}>
+          Crafting exceptional digital experiences with modern technologies and
+          clean design.
+        </m.p>
       </div>
     </div>
   );

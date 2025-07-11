@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css';
 import Image from 'next/image';
-import image from '../../public/favicon-32x32.png';
+import { m } from 'framer-motion';
 
 const testimonials = [
   {
@@ -15,12 +15,10 @@ const testimonials = [
     name: 'Chikwreru Stanley',
     gist: "As an engineer, I'm truly impressed by Emmanuel's skills. Looking forward to more collaborations!",
   },
-
   {
     name: 'Ikemba Chibueze',
     gist: "Easy to approch and relate with. He always come through and that's satisfactory.",
   },
-
   {
     name: 'Clement',
     gist: 'Your keen attention to detail and seamless integration of design elements have elevated our projects to new heights. Looking forward to continued success together!',
@@ -29,42 +27,60 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className='w-full md:w-1/5 space-y-4'>
-      <h4 className='text-xl md:text-2xl font-medium text-green-700 drop-shadow-md text-center'>
-        Testimonials
-      </h4>
+    <m.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+      viewport={{ once: true }}
+      className='w-full max-w-6xl mx-auto'>
+      <div className='apple-card p-8 md:p-12 space-y-8'>
+        <div className='text-center space-y-4'>
+          <h2 className='text-3xl md:text-4xl font-bold apple-text-primary'>
+            What people <span className='apple-text-accent'>say</span>
+          </h2>
 
-      <Swiper
-        className='w-full md:w-full bg-green-600/20 backdrop-blur-md rounded-xl overflow-hidden'
-        modules={[Pagination, Autoplay]}
-        pagination={{ el: '.pagn' }}
-        autoplay={{ delay: 5000 }}
-        slidesPerView={1}
-        centeredSlides={true}>
-        {testimonials.map(({ name, gist }, index) => (
-          <SwiperSlide
-            key={index}
-            className=' space-y-2 justify-center items-center p-8 
-       text-center text-green-600'>
-            <Image
-              //   priority
-              alt='workspace'
-              src={image}
-              className='w-12 h-12 rounded-full mx-auto border-2 border-green-600'
-              width={100}
-              height={100}
-            />
-            <p className='text-black dark:text-white font-medium text-lg'>
-              {name}
-            </p>
-            <p>"{gist}"</p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className='w-28 mx-auto'>
-        <div className='pagn bg-green-600/20 rounded-lg flex justify-center p-2' />
+          <div className='w-16 h-0.5 apple-gradient mx-auto rounded-full' />
+        </div>
+
+        <Swiper
+          className='w-full'
+          modules={[Pagination, Autoplay]}
+          pagination={{ el: '.pagn' }}
+          autoplay={{ delay: 5000 }}
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={30}>
+          {testimonials.map(({ name, gist }, index) => (
+            <SwiperSlide key={index}>
+              <div className='apple-glass rounded-2xl p-8 md:p-12 text-center space-y-6'>
+                <div className='w-16 h-16 mx-auto'>
+                  <Image
+                    alt='workspace'
+                    src={'/favicon-32x32.png'}
+                    className='w-full h-full rounded-full border-2 border-white/20'
+                    width={64}
+                    height={64}
+                  />
+                </div>
+
+                <div className='space-y-4'>
+                  <h3 className='text-xl md:text-2xl font-semibold apple-text-primary'>
+                    {name}
+                  </h3>
+                  <p className='text-lg apple-text-secondary leading-relaxed italic'>
+                    "{gist}"
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className='flex justify-center'>
+          <div className='pagn rounded-lg flex justify-center p-2' />
+        </div>
       </div>
-    </div>
+    </m.div>
   );
 };
 

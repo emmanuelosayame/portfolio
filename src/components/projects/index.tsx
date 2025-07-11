@@ -1,7 +1,5 @@
-'use client';
-
-import React, { forwardRef } from 'react';
-import { GithubSvg } from '../Svgs';
+import React from 'react';
+import { GithubSvg } from '../svgs';
 import Image from 'next/image';
 import { m } from 'framer-motion';
 import { images, list } from './list';
@@ -10,136 +8,128 @@ interface Projects {
   image: string;
 }
 
-const Projects = forwardRef<HTMLDivElement>((_, ref) => {
+const Projects = () => {
   return (
-    <div
-      ref={ref}
-      className='py-5 px-2 md:px-10 bg-black/20 backdrop-blur-lg rounded-3xl'>
-      <h2 className=' text-center text-xl md:text-2xl text-green-500 font-medium'>
-        Some of the things I've built
-      </h2>
-      <div className='border-b border-b-green-500 my-2  md:mb-10 w-[95%] md:w-11/12 mx-auto' />
-      <div className='space-y-10 md:space-y-24 w-full'>
-        {list.map((project) => (
-          <m.div
-            initial={{ scale: 0.7, opacity: 0, y: 50 }}
-            whileInView={{
-              scale: 1,
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{ type: 'spring', duration: 0.6 }}
-            key={project.id}
-            className='flex flex-col-reverse md:flex-row items-center w-full md:w-3/5 mx-auto gap-2 h-auto'>
-            <a
-              href={project.webLink}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='w-full md:w-1/3 h-full hover:scale-105 transition-all'>
-              <Image
-                alt=''
-                width={300}
-                height={541}
-                src={images[project.id]}
-                className={`rounded-3xl ${
-                  project.hideBorder ? '' : 'border-4 border-green-600/80'
-                } w-auto md:w-10/12 mx-auto h-auto`}
-              />
-            </a>
+    <m.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+      viewport={{ once: true }}
+      className='w-full max-w-6xl mx-auto'>
+      <div className='apple-card p-8 md:p-12 space-y-12'>
+        <div className='text-center space-y-4'>
+          <h2 className='text-3xl md:text-4xl font-bold apple-text-primary'>
+            Some of the things I've{' '}
+            <span className='apple-text-accent'>built</span>
+          </h2>
 
-            <div className='flex flex-col gap-3 w-full md:w-2/3 h-fit p-4 dark:text-neutral-300'>
-              <div className='flex items-center justify-between gap-5 md:gap-16 my-5'>
-                <div className='flex gap-3 items-center text-green-600'>
-                  <p className=' flex items-center gap-2 font-semibold text-xl md:text-2xl'>
-                    {project.title}
-                  </p>
-                  <a
-                    href={project.webLink}
-                    className='rounded-full p-2 hover:bg-green-600/30'>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke-width='2.5'
-                      stroke='currentColor'
-                      className='w-[22px] h-[22px]'>
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25'
-                      />
-                    </svg>
-                  </a>
-                </div>
-                {project.githubLink === 'private' ? (
-                  <div className='flex flex-col items-center drop-shadow-md opacity-50 text-sm'>
-                    <GithubSvg />
-                    <p>private</p>
+          <div className='w-16 h-0.5 apple-gradient mx-auto rounded-full' />
+        </div>
+
+        <div className='space-y-16'>
+          {list.map((project, index) => (
+            <m.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              viewport={{ once: true }}
+              key={project.id}
+              className='flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12'>
+              <div className='w-full md:w-1/2'>
+                <a
+                  href={project.webLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block apple-scale-hover'>
+                  <Image
+                    alt={project.title}
+                    width={300}
+                    height={541}
+                    src={images[project.id]}
+                    className={`rounded-2xl shadow-2xl ${
+                      project.hideBorder ? '' : 'border border-white/20'
+                    } w-full h-auto`}
+                  />
+                </a>
+              </div>
+
+              <div className='w-full md:w-1/2 space-y-6'>
+                <div className='flex items-center justify-between'>
+                  <div className='flex items-center gap-3'>
+                    <h3 className='text-2xl md:text-3xl font-bold apple-text-primary'>
+                      {project.title}
+                    </h3>
+                    <a
+                      href={project.webLink}
+                      className='apple-glass rounded-full p-2 hover:bg-white/20 transition-colors'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        strokeWidth='2'
+                        stroke='currentColor'
+                        className='w-5 h-5 apple-text-primary'>
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25'
+                        />
+                      </svg>
+                    </a>
                   </div>
-                ) : (
-                  <a
-                    className='flex flex-col items-center drop-shadow-md opacity-50 text-sm'
-                    href={project.githubLink}>
-                    <GithubSvg />
-                    <p>Github</p>
-                  </a>
-                )}
-              </div>
-              <p className='w-full'>{project.gist}</p>
-              <div className=''>
-                <h4 className='text-xl font-medium text-green-600 border-b border-b-green-600'>
-                  Perks
-                </h4>
-                <div className='flex justify-between items-center'>
-                  <p>Responsiveness</p>
-                  <p className='text-green-600'>
-                    {project.perks.responsiveness}
-                  </p>
-                </div>
-                <div className='flex justify-between items-center'>
-                  <p>Pages Insight (metrics)</p>
-                  <p className='text-green-600'>{project.perks.pageInsight}</p>
+
+                  {project.githubLink === 'private' ? (
+                    <div className='flex flex-col items-center opacity-50'>
+                      <GithubSvg />
+                      <p className='text-xs apple-text-secondary'>private</p>
+                    </div>
+                  ) : (
+                    <a
+                      className='flex flex-col items-center opacity-50 hover:opacity-100 transition-opacity'
+                      href={project.githubLink}>
+                      <GithubSvg />
+                      <p className='text-xs apple-text-secondary'>Github</p>
+                    </a>
+                  )}
                 </div>
 
-                <div className='flex justify-between items-center'>
-                  <p>Provided designs</p>
-                  <p className='text-green-600'>
-                    {project.perks.providedDesign}
-                  </p>
-                </div>
+                <p className='text-lg apple-text-secondary leading-relaxed'>
+                  {project.gist}
+                </p>
 
-                <div className='flex justify-between items-center'>
-                  <p>Fields worked-on</p>
-                  <p className='text-green-600 w-1/2 text-sm md:text-base text-end'>
-                    {project.perks.fieldsWorkedOn}
-                  </p>
-                </div>
-              </div>
-
-              <div className=''>
-                <h4 className='text-xl font-medium text-green-600 border-b border-b-green-600'>
-                  Client Feedback
-                </h4>
-
-                {project.clientFeedBack.map((client, index) => (
-                  <div key={index} className=''>
-                    <p className='flex gap-2 items-center mt-4 mb-2'>
-                      {client.name}
-                      <span className='text-[10px] bg-neutral-500 px-1 rounded'>
-                        {client.position}
-                      </span>
-                    </p>
-                    <p className='text-sm'>"{client.feedback}"</p>
+                <div className='space-y-4'>
+                  <h4 className='text-xl font-semibold apple-text-primary border-b border-white/20 pb-2'>
+                    Client Feedback
+                  </h4>
+                  <div className='space-y-4'>
+                    {project.clientFeedBack.map((client, index) => (
+                      <div key={index} className='apple-glass rounded-xl p-4'>
+                        <div className='flex items-center gap-2 mb-2'>
+                          <span className='font-medium apple-text-primary'>
+                            {client.name}
+                          </span>
+                          <span className='text-xs apple-glass px-2 py-1 rounded-full'>
+                            {client.position}
+                          </span>
+                        </div>
+                        <p className='text-sm apple-text-secondary italic'>
+                          "{client.feedback}"
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          </m.div>
-        ))}
+            </m.div>
+          ))}
+        </div>
       </div>
-    </div>
-    // </Box>
+    </m.div>
   );
-});
+};
 
 export default Projects;
