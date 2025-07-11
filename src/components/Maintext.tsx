@@ -3,7 +3,7 @@ import { m } from 'framer-motion';
 
 const Maintext = () => {
   return (
-    <div className='relative flex flex-col items-center justify-center min-h-screen'>
+    <div className='relative flex flex-col items-center justify-center min-h-[80vh]'>
       <div className='text-center space-y-8'>
         <m.h1
           className='text-sm md:text-base apple-text-secondary font-medium tracking-wide'

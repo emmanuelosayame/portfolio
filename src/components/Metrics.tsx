@@ -4,36 +4,69 @@ import { m } from 'framer-motion';
 import Link from 'next/link';
 
 export const LeftMetrics = () => {
-  return (
-    <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ type: 'spring', duration: 1, delay: 4.5 }}
-      className='fixed hidden md:block left-10 center-y
-      w-72 '>
-      <m.div
-        className='border border-fgColor rounded-md flex p-4 gap-2 flex-col items-center  text-center text-fgColor card-glow'
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
-        <h3 className=''>***</h3>
-        <p className='text-sm'>Fast and performant applications</p>
-        <p className='text-sm'>Adhere to best practices, no cutting corners</p>
-        <p className='text-sm'>
-          Loads of features, but neccesary and performant.
-        </p>
+  const floatingElements = [
+    {
+      text: 'Fast and performant applications',
+      position: 'top-32 left-8',
+      delay: 0.2,
+    },
+    {
+      text: 'Adhere to best practices',
+      position: 'top-64 left-16',
+      delay: 0.4,
+    },
+    {
+      text: 'No cutting corners',
+      position: 'top-96 left-6',
+      delay: 0.6,
+    },
+    {
+      text: 'Loads of features',
+      position: 'top-[28rem] left-12',
+      delay: 0.8,
+    },
+    {
+      text: 'Necessary and performant',
+      position: 'top-[36rem] left-8',
+      delay: 1.0,
+    },
+    {
+      text: 'Stability and scalability',
+      position: 'top-[44rem] left-14',
+      delay: 1.2,
+    },
+    {
+      text: 'Clean code',
+      position: 'top-[52rem] left-10',
+      delay: 1.4,
+    },
+    {
+      text: 'Modern technologies',
+      position: 'top-[60rem] left-16',
+      delay: 1.6,
+    },
+  ];
 
-        <p className='text-sm inline-flex'>
-          Stability and scalability.
-          <span className='inline-flex'>
-            <CheckIcon />
-          </span>
-        </p>
-        {/* <button
-        className='bg-black py-2 w-full rounded-lg flex justify-center text-white text-sm drop-shadow-md hover:scale-110
-         transition-all'>
-        View other projects
-      </button> */}
-      </m.div>
-    </m.div>
+  return (
+    <>
+      {floatingElements.map((element, index) => (
+        <m.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 0.3, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: element.delay,
+            ease: [0.4, 0, 0.2, 1],
+          }}
+          className={`fixed ${element.position} z-0 pointer-events-none`}>
+          <div className='bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-200/30'>
+            <p className='text-xs text-gray-700 font-medium whitespace-nowrap'>
+              {element.text}
+            </p>
+          </div>
+        </m.div>
+      ))}
+    </>
   );
 };
