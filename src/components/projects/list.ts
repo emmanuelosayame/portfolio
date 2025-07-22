@@ -74,7 +74,7 @@ export const list = [
     clientFeedBack: [
       {
         position: 'Founder',
-        name: 'Lamar',
+        name: 'Emmanuel',
         feedback:
           'I’m absolutely thrilled with the webapp you built. The smooth browsing, easy checkout, and stunning product presentation exceeded my expectations. Shopping has never been this enjoyable. Kudos on a fantastic job!',
       },

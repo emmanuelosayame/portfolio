@@ -2,12 +2,10 @@
 import AboutMe from '@/components/aboutme';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
-import Header from '@/components/links';
+import Header from '@/components/header';
 import Maintext from '@/components/maintext';
 import MyStack from '@/components/mystack';
-import Testimonials from '@/components/testimonials';
 import Projects from '@/components/projects';
-import { m } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -32,18 +30,10 @@ export default function Home() {
             <Projects />
           </section>
 
-          {/* Testimonials Section */}
-          <section className='snap-section'>
-            <Testimonials />
-          </section>
-
           {/* Contact Section */}
-          <section className='snap-section'>
+          <section className='snap-section flex flex-col gap-10 pb-20'>
             <Contact />
-          </section>
 
-          {/* Footer Section */}
-          <section className='snap-section'>
             <Footer />
           </section>
         </div>
