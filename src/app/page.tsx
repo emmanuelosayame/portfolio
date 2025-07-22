@@ -1,11 +1,10 @@
 'use client';
-import AboutMe from '@/components/aboutme';
-import Contact from '@/components/contact';
-import Footer from '@/components/footer';
-import Header from '@/components/header';
-import Maintext from '@/components/maintext';
-import MyStack from '@/components/mystack';
-import Projects from '@/components/projects';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import MainText from '../components/maintext';
+import MyStack from '../components/mystack';
+import Projects from '../components/projects';
 
 export default function Home() {
   return (
@@ -17,7 +16,7 @@ export default function Home() {
         <div className='space-y-0'>
           {/* Hero Section */}
           <section className='snap-section'>
-            <Maintext />
+            <MainText />
           </section>
 
           {/* My Stack Section */}
