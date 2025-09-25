@@ -6,16 +6,16 @@ const Maintext = () => {
     <div className='relative flex flex-col items-center justify-center min-h-[80vh]'>
       <div className='text-center space-y-8'>
         <m.h1
-          className='text-sm md:text-base apple-text-secondary font-medium tracking-wide'
+          className='text-sm md:text-base apple-text-secondary tracking-wide'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}>
           Web app • Mobile app • Backend
         </m.h1>
 
-        <div className='space-y-4'>
+        <div className='space-y-3'>
           <m.h1
-            className='text-3xl sm:text-5xl md:text-6xl font-bold apple-text-primary tracking-tight'
+            className='text-3xl sm:text-5xl md:text-6xl font-semibold apple-text-primary tracking-tight'
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}>
@@ -32,7 +32,7 @@ const Maintext = () => {
         </div>
 
         <m.p
-          className='text-lg md:text-xl apple-text-secondary max-w-2xl mx-auto leading-relaxed'
+          className='text-lg md:text-xl apple-text-secondary max-w-[600px] mx-auto leading-relaxed font-normal'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}>

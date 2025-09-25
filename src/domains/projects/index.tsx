@@ -43,7 +43,6 @@ const Projects = () => {
               className={`flex flex-col ${
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               } items-center gap-12 lg:gap-16`}>
-              {/* Image Section */}
               <div className='w-full lg:w-2/5 flex justify-center'>
                 <a
                   href={project.webLink}
@@ -65,18 +64,17 @@ const Projects = () => {
                 </a>
               </div>
 
-              {/* Content Section */}
               <div className='w-full lg:w-3/5 space-y-8'>
-                {/* Header */}
                 <div className='space-y-4'>
                   <div className='flex items-center justify-between'>
-                    <h3 className='text-3xl md:text-4xl font-bold apple-text-primary'>
+                    <h3 className='text-2xl md:text-3xl font-semibold apple-text-primary'>
                       {project.title}
                     </h3>
                     <div className='flex items-center gap-3'>
                       <a
                         href={project.webLink}
-                        className='apple-glass rounded-full p-3 hover:bg-white/20 transition-all duration-300 hover:scale-110'>
+                        className='apple-glass rounded-full p-3 hover:bg-white/20 transition-all duration-400 hover:scale-110 flex gap-2'>
+                        <span>Visit</span>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           fill='none'
@@ -92,14 +90,7 @@ const Projects = () => {
                         </svg>
                       </a>
 
-                      {project.githubLink === 'private' ? (
-                        <div className='flex flex-col items-center opacity-50'>
-                          <GithubSvg />
-                          <p className='text-xs apple-text-secondary'>
-                            private
-                          </p>
-                        </div>
-                      ) : (
+                      {project.githubLink === 'private' ? null : (
                         <a
                           className='flex flex-col items-center opacity-50 hover:opacity-100 transition-opacity'
                           href={project.githubLink}>
@@ -111,21 +102,19 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Description */}
                 <p className='text-xl apple-text-secondary leading-relaxed'>
                   {project.gist}
                 </p>
 
-                {/* Client Feedback */}
                 <div className='space-y-6'>
-                  <h4 className='text-2xl font-semibold apple-text-primary border-b border-white/20 pb-3'>
+                  <h4 className='text-xl font-medium apple-text-primary border-b border-white/20 pb'>
                     Client Feedback
                   </h4>
-                  <div className='space-y-4'>
+                  <div className='space-y-2'>
                     {project.clientFeedBack.map((client, clientIndex) => (
                       <m.div
                         key={clientIndex}
-                        className='apple-glass rounded-2xl p-6 hover:bg-white/5 transition-colors duration-300'
+                        className='apple-glass rounded-2xl p-5 hover:bg-white/5 transition-colors duration-300'
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: clientIndex * 0.1 }}

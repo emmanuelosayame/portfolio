@@ -4,6 +4,7 @@ import ewsmobile from '../../../public/ewsmobile.webp';
 import chesterfieldmobile from '../../../public/chesterfield-mobile.webp';
 import salestrack from '../../../public/sales-track.webp';
 import { StaticImageData } from 'next/image';
+import fimaImg from '../../../public/fima.webp';
 
 export const images: { [key: string]: StaticImageData } = {
   chesterfield: chesterfieldmobile,
@@ -11,22 +12,46 @@ export const images: { [key: string]: StaticImageData } = {
   radicalx: radicalxdashboard2,
   delorand: delorandmobile,
   salestrack: salestrack,
+  fima: fimaImg,
 };
 
 export const list = [
+  {
+    id: 'fima',
+    webLink: 'https://www.fima.delorand.com',
+    githubLink: 'private',
+    title: 'Fima',
+    gist: 'Fima is an utilities payment platform by delorand that offers the cheapest data bundles with maximum reliability. The app is built with tansatck router (React) and exhibits proper modern webpage cues.',
+    clientFeedBack: [
+      {
+        position: 'Head of design',
+        name: 'Clement',
+        feedback:
+          'The way you transalated our designs into stunning visuals and very functional screens have to be talked about. I really commend you Emmanuel, Well done!',
+      },
+    ],
+  },
+  {
+    id: 'delorand',
+    webLink: 'https://www.delorand.com',
+    githubLink: 'private',
+    title: 'Delorand',
+    gist: 'An fashion marketplace. Built with robust technologies including a server side rendered Next JS front-end, hono powered backend ontop of postgres db, the webapp boasts performance, good optimation, excellent design and over-all proper implementation of frontend and backend technologies.',
+    clientFeedBack: [
+      {
+        position: 'Founder',
+        name: 'Emmanuel',
+        feedback:
+          'I’m absolutely thrilled with the webapp you built. The smooth browsing, easy checkout, and stunning product presentation exceeded my expectations. Shopping has never been this enjoyable. Kudos on a fantastic job!',
+      },
+    ],
+  },
   {
     id: 'chesterfield',
     webLink: 'https://chesterfieldhq.com',
     githubLink: 'private',
     title: 'Chesterfield',
     gist: 'An interior design firm based in Lagos, Nigeria. With a commitment to creating stunning and functional spaces, our team of talented designers, decorators and artisans focuses on understanding our clients‘ unique needs and delivering exceptional results. From residential to commercial projects, we strive to exceed expectations with our creative vision and attention to detail.',
-    perks: {
-      responsiveness: '101%',
-      pageInsight: '97%',
-      providedDesign: 'true',
-      implementationGrade: 'pixel perfect',
-      fieldsWorkedOn: 'Front-end, email-serv..',
-    },
     clientFeedBack: [
       {
         position: 'Owner',
@@ -42,13 +67,6 @@ export const list = [
     githubLink: 'private',
     title: 'Eternal Workspace',
     gist: 'EWS help people that work remotely become consistently productive by connecting them with nearby/serene locations and a responsive co-working community to get their work done, minimizing procrastination',
-    perks: {
-      responsiveness: '100%',
-      pageInsight: '96%',
-      providedDesign: 'true',
-      implementationGrade: 'pixel perfect',
-      fieldsWorkedOn: 'Back-end, front-end, micro-serv..',
-    },
     clientFeedBack: [
       {
         position: 'Founder',
@@ -59,40 +77,11 @@ export const list = [
     ],
   },
   {
-    id: 'delorand',
-    webLink: 'https://www.delorand.com',
-    githubLink: 'private',
-    title: 'delorand',
-    gist: 'An e-commerce platform, specialized in fashion and electronic components. Built in house with typical frontend technologies like Nextjs, mongodb, trpc..., the webapp boasts performance, good optimation, excellent design and over-all proper implementation of frontend technologies.',
-    perks: {
-      responsiveness: '100%',
-      pageInsight: '89%',
-      providedDesign: 'false',
-      implementationGrade: null,
-      fieldsWorkedOn: 'Back-end, front-end, micro-serv..',
-    },
-    clientFeedBack: [
-      {
-        position: 'Founder',
-        name: 'Emmanuel',
-        feedback:
-          'I’m absolutely thrilled with the webapp you built. The smooth browsing, easy checkout, and stunning product presentation exceeded my expectations. Shopping has never been this enjoyable. Kudos on a fantastic job!',
-      },
-    ],
-  },
-  {
     id: 'radicalx',
     webLink: 'https://internship-dashboard.vercel.app',
     githubLink: 'https://github.com/emmanuelosayame/internship-dashboard',
     title: 'Radical-X-dashboard',
     gist: 'Companies working with RadicalX want to be able to provide 3-6 months paid apprenticeships to the top talent coming out of the RadicalX internship program. RadicalX apprenticeships enable companies to discover, build and manage a cloud team to work on specific projects on-demand. The idea is that companies will be able to build and onboard an apprenticeship team in days and it  will allow them pay-as-you-go flexibility. In order to do this,  companies need to create an apprenticeship on the RadicalX platform. This web app was designed to allow companies create apprenticeships on the platform.',
-    perks: {
-      responsiveness: '100%',
-      pageInsight: '96%',
-      providedDesign: 'true',
-      implementationGrade: 'pixel perfect',
-      fieldsWorkedOn: 'Front-end, Baas.',
-    },
     clientFeedBack: [
       {
         position: 'Ceo',
