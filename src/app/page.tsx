@@ -1,10 +1,10 @@
 'use client';
-import Contact from '../components/contact';
-import Footer from '../components/footer';
-import Header from '../components/header';
-import MainText from '../components/maintext';
-import MyStack from '../components/mystack';
-import Projects from '../components/projects';
+import Contact from '../domains/contact';
+import Footer from '../domains/footer';
+import Header from '../domains/header';
+import MainText from '../domains/main-text';
+import MyStack from '../domains/my-stack';
+import Projects from '../domains/projects';
 
 export default function Home() {
   return (

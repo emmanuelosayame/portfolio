@@ -1,5 +1,5 @@
-import Client from './client';
 import './globals.css';
+import Client from './root-client';
 import { DM_Sans } from 'next/font/google';
 
 const dmSans = DM_Sans({

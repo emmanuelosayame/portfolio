@@ -3,7 +3,7 @@ import {
   GithubSvg,
   LinkedInSvg,
   WhatsappSvg,
-} from '@/components/svgs';
+} from '@/domains/svgs';
 import { m } from 'framer-motion';
 
 const Header = () => {
